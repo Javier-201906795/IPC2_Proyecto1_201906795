@@ -1,3 +1,3 @@
 
 print ("Hola mundo")
-print ("Temporada examenes Primer parcial")
+print ("Lectura del proyecto")
