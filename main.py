@@ -1,3 +1,9 @@
 
-print ("Hola mundo")
-print ("Lectura del proyecto")
+from Menutexto import Menu
+
+#> [Clase Texto Menus]
+txt = Menu()
+
+
+#>Menu Principal
+txt.MenuPrincipal()
