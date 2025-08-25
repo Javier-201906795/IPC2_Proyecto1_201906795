@@ -7,6 +7,9 @@ txt = Menu()
 
 while True:
     try:
+        print("Proyecto IPC2")
+        print("Javier Ricardo Yllescas Barrios")
+        print("201906795")
         #>Menu Principal
         txt.MenuPrincipal()
         #> Opción ingresada
