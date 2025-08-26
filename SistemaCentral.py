@@ -27,6 +27,21 @@ class Sistema:
 
 
 
+    def Buscarcampo(self, elemento):
+        print(">>>> Buscando: ", elemento)
+        for campo in self.campos:
+            try:
+                estacionebaseitem = campo.getElementsByTagName(str(elemento))
+                #>> Verificar si hay estaciones base
+                if estacionebaseitem:
+                    return estacionebaseitem
+                else:
+                    print(f"¡¡¡ No se encontro: {elemento} en el documento. !!!")
+                    print(">>> No se puede procesar intenta cargar un archivo nuevo")
+                    return None
+            except Exception as e:
+                    print(f"¡¡¡ Error al procesar datos, Error buscando {elemento} !!!")
+                    print(e)
 
 
     def ProcesarDatos(self):
@@ -34,14 +49,24 @@ class Sistema:
             print(">>> Procesando datos...")
             #Recorrer datos
             for campo in self.campos:
-                #Obtener ID
-                id = campo.getAttribute('id')
-                #Obtener Nombre
-                nombre = campo.getAttribute('nombre')
-                print("ID: ", id, " - Nombre: ", nombre)
+                try:
+                    #Obtener ID
+                    id = campo.getAttribute('id')
+                    #Obtener Nombre
+                    nombre = campo.getAttribute('nombre')
+                    print("ID: ", id, " - Nombre: ", nombre)
 
-                #> Cargar Estaciones Base
-                
-            
+
+                    #> Cargar Estaciones Base
+                    estacionbaseitem = self.Buscarcampo('estacionesBase')
+                    print("Estaciones Base: ", estacionbaseitem)
+
+
+                    
+
+
+                except Exception as e:
+                    print("¡¡¡ Error al procesar datos !!!")
+                    print(e)
         else:
             print("¡¡¡ No hay datos para procesar !!!")
