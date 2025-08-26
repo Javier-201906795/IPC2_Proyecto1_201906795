@@ -24,10 +24,24 @@ class Sistema:
             print("¡¡¡ Ocurio un error al cargar los archivos !!!")
             print("Intente nuevamente.")
     
+
+
+
+
+
     def ProcesarDatos(self):
         if self.campos != None:
             print(">>> Procesando datos...")
-            # Aquí se procesan los datos
-            print(self.campos)
+            #Recorrer datos
+            for campo in self.campos:
+                #Obtener ID
+                id = campo.getAttribute('id')
+                #Obtener Nombre
+                nombre = campo.getAttribute('nombre')
+                print("ID: ", id, " - Nombre: ", nombre)
+
+                #> Cargar Estaciones Base
+                
+            
         else:
             print("¡¡¡ No hay datos para procesar !!!")
