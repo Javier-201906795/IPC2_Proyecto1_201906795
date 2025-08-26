@@ -5,6 +5,7 @@ from SistemaArchivos import SistemArchivos
 class Sistema:
     def __init__(self):
         self.campos = None
+        self.estacionesbase = []
 
     def CargarArchivos(self, rutacompleta):
         print(">> Cargando archivos...")
@@ -60,6 +61,28 @@ class Sistema:
                     #> Cargar Estaciones Base
                     estacionbaseitem = self.Buscarcampo('estacionesBase')
                     print("Estaciones Base: ", estacionbaseitem)
+                    #>> Validar Estacion Base
+                    if estacionbaseitem == None:
+                        print(">>>> No hay estaciones base. cargue otro documento.")
+                        break
+                    #>>> Obtener estaciones
+                    for estacionbase in estacionbaseitem:
+                        estaciones = self.Buscarcampo('estacion')
+                        #>> Validar estaciones
+                        if estaciones == None:
+                            print(">>>> No hay estaciones. cargue otro documento.")
+                            break
+                        #>>>> Obtener Atributos estaciones    
+                        for estacion in estaciones:
+                            estacion_id = estacion.getAttribute('id')
+                            estacion_nombre = estacion.getAttribute('nombre')
+                            print(">>> Estacion ID: ", estacion_id, " - Nombre: ", estacion_nombre)
+                            #>>>>> Guardar estacion
+                            self.estacionesbase.append([estacion_id, estacion_nombre])
+                        
+                        print(self.estacionesbase)
+                    
+                        
 
 
                     
