@@ -25,6 +25,8 @@ while True:
         elif ingreseopcion == 4:
             print("Opción 4")
             txt.DatosEstudiante()
+        elif ingreseopcion == 5:
+            print("opcion 5")
         elif ingreseopcion == 6:
             print(">> Saliendo del programa...")
             break
