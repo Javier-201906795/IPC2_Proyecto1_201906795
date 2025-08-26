@@ -19,12 +19,13 @@ while True:
 
         #Opicones
         if ingreseopcion == 1:
-            print(">> Menu Cargar un archivo .")
+            print(">> Menu Cargar un archivo.")
             ruta, nombre = txt.CargarArchivo()
             print(ruta, " - ",nombre)
 
         elif ingreseopcion == 2:
-            print("Opción 2")
+            print(">> Procesar el Archivo.")
+            
         elif ingreseopcion == 4:
             print("Opción 4")
             txt.DatosEstudiante()
