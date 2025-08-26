@@ -53,6 +53,8 @@ class Menu():
         except:
             print("¡¡¡ Ingrese una opción válida. !!!")
 
+            
+
     def EscribirSalida(self):
         try:
             self.MenuEscribirArchivo()
