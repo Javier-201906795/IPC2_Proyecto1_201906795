@@ -34,8 +34,10 @@ while True:
         elif ingreseopcion == 4:
             print(">> Menu Mostrar datos del estudiante")
             txt.DatosEstudiante()
+
         elif ingreseopcion == 5:
             print(">> Generar grafica")
+            
         elif ingreseopcion == 6:
             print(">> Saliendo del programa...")
             break
