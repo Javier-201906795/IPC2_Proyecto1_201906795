@@ -35,11 +35,27 @@ class Menu():
         print("*"*34)
         print("*"+" "*8 + " Cargar archivo " + " "*8 + "*")
         print("*"*34)
+
+    def MenuEscribirArchivo(self):
+        print()
+        print("*"*34)
+        print("*"+" "*7 + " Escribir archivo " + " "*7 + "*")
+        print("*"*34)
     
     
     def CargarArchivo(self):
         try:
             self.MenuCargarArchivo()
+            ruta = str(input("Ingrese la ruta del archivo: "))
+            nombre = str(input("Ingrese el nombre del archivo: "))
+            print("_"*36)
+            return ruta, nombre
+        except:
+            print("¡¡¡ Ingrese una opción válida. !!!")
+
+    def EscribirSalida(self):
+        try:
+            self.MenuEscribirArchivo()
             ruta = str(input("Ingrese la ruta del archivo: "))
             nombre = str(input("Ingrese el nombre del archivo: "))
             print("_"*36)

@@ -26,6 +26,11 @@ while True:
         elif ingreseopcion == 2:
             print(">> Procesar el Archivo.")
             
+        elif ingreseopcion == 3:
+            print(">> Menu Escribir archivo de salida.")
+            ruta, nombre = txt.EscribirSalida()
+            print(ruta, " - ",nombre)
+
         elif ingreseopcion == 4:
             print("Opción 4")
             txt.DatosEstudiante()
