@@ -22,11 +22,15 @@ while True:
             print("Opción 1")
         elif ingreseopcion == 2:
             print("Opción 2")
+        elif ingreseopcion == 4:
+            print("Opción 4")
+            txt.DatosEstudiante()
         elif ingreseopcion == 6:
             print(">> Saliendo del programa...")
             break
+        else:
+            print(">> Ingrese una opcion dentro del rango de opciones")
         
-        print("_"*25)
         print()
     except Exception:
         print("¡¡ Ingrese una opción válida. !!")

@@ -16,3 +16,15 @@ class Menu():
         print("* 6."+" Salida " + " "*23 + "*")
         print("*"*36)
         print()
+
+    def DatosEstudiante(self):
+        print()
+        print("/"*36)
+        print("> Nombre: Javier Ricardo Yllescas Barrios")
+        print("> Carnet: 201906795")
+        print("> Introduccion a la Programación y Computación 2")
+        print("> Sección: C")
+        print("> 4to. Semestre")
+        print("> Documentacion: ")
+        print("> Github: https://github.com/Javier-201906795/IPC2_Proyecto1_201906795 ")
+        print("/"*36)
