@@ -19,7 +19,10 @@ while True:
 
         #Opicones
         if ingreseopcion == 1:
-            print("Opción 1")
+            print(">> Menu Cargar un archivo .")
+            ruta, nombre = txt.CargarArchivo()
+            print(ruta, " - ",nombre)
+
         elif ingreseopcion == 2:
             print("Opción 2")
         elif ingreseopcion == 4:
