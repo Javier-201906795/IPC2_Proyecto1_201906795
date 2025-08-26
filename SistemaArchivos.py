@@ -1,11 +1,16 @@
 #Ingresar, Leer y segmentar archivo
+from xml.dom.minidom import parse
 
-class SistemaArchivos:
-    def __init__(self, rutadelarchivo):
-        self.rutadelarchivo = rutadelarchivo
+class SistemArchivos:
+    def __init__(self):
+        self.rutadelarchivo = None
 
-    def leerArchivo(self):
-        try:
-            pass
-        except Exception as e:
-            print(f"Ocurrió un error al leer el archivo. \n {e}")
+    def leerArchivo(self, ruta):
+            try:
+                Dom = parse(ruta)
+                campos_xml = Dom.getElementsByTagName('campo')
+                return campos_xml
+                
+            except Exception as e:
+                print("¡¡¡ Error al cargar archivos !!!")
+                print(e)

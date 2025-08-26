@@ -1,8 +1,11 @@
 
 from Menutexto import Menu
+from SistemaCentral import Sistema
 
 #> [Clase Texto Menus]
 txt = Menu()
+#> [Clase Sistema]
+Sys = Sistema()
 
 
 print("Proyecto IPC2")
@@ -20,8 +23,10 @@ while True:
         #Opicones
         if ingreseopcion == 1:
             print(">> Menu Cargar un archivo.")
-            ruta, nombre = txt.CargarArchivo()
-            print(ruta, " - ",nombre)
+            #Obtener Ruta
+            rutacompleta = txt.CargarArchivo()
+            #Cargar Archivos al Sistema
+            Sys.CargarArchivos(rutacompleta)
 
         elif ingreseopcion == 2:
             print(">> Procesar el Archivo.")
@@ -37,7 +42,7 @@ while True:
 
         elif ingreseopcion == 5:
             print(">> Generar grafica")
-            
+
         elif ingreseopcion == 6:
             print(">> Saliendo del programa...")
             break

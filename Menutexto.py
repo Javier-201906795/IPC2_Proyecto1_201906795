@@ -49,7 +49,7 @@ class Menu():
             ruta = str(input("Ingrese la ruta del archivo: "))
             nombre = str(input("Ingrese el nombre del archivo: "))
             print("_"*36)
-            return ruta, nombre
+            return ruta + "\\" + nombre
         except:
             print("¡¡¡ Ingrese una opción válida. !!!")
 
