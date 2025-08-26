@@ -30,6 +30,7 @@ while True:
 
         elif ingreseopcion == 2:
             print(">> Procesar el Archivo.")
+            Sys.ProcesarDatos()
 
         elif ingreseopcion == 3:
             print(">> Menu Escribir archivo de salida.")
