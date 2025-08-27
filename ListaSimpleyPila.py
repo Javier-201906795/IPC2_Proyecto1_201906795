@@ -3,37 +3,131 @@ class Nodo:
         self.valor = valor
         self.proximo = None
 
-class ListaSimple:
+    def obtenerDato(self):
+        return self.valor
+
+    def obtenerSiguiente(self):
+        return self.siguiente
+
+    def asignarDato(self,valor):
+        self.valor = valor
+
+    def asignarSiguiente(self,nuevosiguiente):
+        self.siguiente = nuevosiguiente
+
+
+########################################################################
+
+class Pila:
+
     def __init__(self):
-        self.inicio = None
-        self.tamanio = 0
+        self.primero = None
+    
+    def obtenerPrimero(self):
+        return self.primero
 
-    def agregar(self, valor):
-        nuevo_nodo = Nodo(valor)
-        if self.inicio is None:
-            self.inicio = nuevo_nodo
-        else:
-            cursor = self.inicio
-            while cursor.proximo:
-                cursor = cursor.proximo
-            cursor.proximo = nuevo_nodo
-        self.tamanio += 1
+    def estaVacia(self):
+        return self.primero == None
 
-    def obtener(self, posicion):
-        if posicion < 0 or posicion >= self.tamanio:
+    def Push(self,item):
+        nuevo = Nodo(item)
+        nuevo.asignarSiguiente(self.primero)
+        self.primero = nuevo
+
+    def tamano(self):
+        actual = self.primero
+        contador = 0
+        while actual != None:
+            contador = contador + 1
+            actual = actual.obtenerSiguiente()
+        return contador
+
+    def desplegar(self):
+        actual = self.primero
+        while actual != None:
+            actual.obtenerDato().desplegar()
+            actual = actual.obtenerSiguiente()
+
+    def buscar(self,item):
+        actual = self.primero
+        encontrado = False
+        while actual != None and not encontrado:
+            if actual.obtenerDato().EsIgualALLave(item):
+                encontrado = True
+            else:
+                actual = actual.obtenerSiguiente()
+
+        return encontrado
+
+    def Pop(self):
+        if self.estaVacia():
             return None
-        cursor = self.inicio
-        for _ in range(posicion):
-            cursor = cursor.proximo
-        return cursor.valor
+        
+        previo = self.primero
+        self.primero = self.primero.obtenerSiguiente()
 
-    def encontrar_posicion(self, id_objetivo):
-        # Devuelve la posición de un nodo cuyo dato tenga atributo "id"
-        cursor = self.inicio
-        pos = 0
-        while cursor:
-            if hasattr(cursor.valor, 'id') and cursor.valor.id == id_objetivo:
-                return pos
-            cursor = cursor.proximo
-            pos += 1
-        return -1
+        return previo.obtenerDato()
+
+
+########################################################################
+
+
+class ListaSimple:
+
+    def __init__(self):
+        self.primero = None
+
+    def estaVacia(self):
+        return self.primero == None
+
+    def agregar(self,item):
+        nuevo = Nodo(item)
+        nuevo.asignarSiguiente(self.primero)
+        self.primero = nuevo
+
+    def tamano(self):
+        actual = self.primero
+        contador = 0
+        while actual != None:
+            contador = contador + 1
+            actual = actual.obtenerSiguiente()
+        return contador
+
+    def desplegar(self):
+        actual = self.primero
+        while actual != None:
+            actual.obtenerDato().desplegar()
+            actual = actual.obtenerSiguiente()
+
+    def buscar(self,item):
+        actual = self.primero
+        encontrado = False
+        while actual != None and not encontrado:
+            if actual.obtenerDato().EsIgualALLave(item):
+                encontrado = True
+            else:
+                actual = actual.obtenerSiguiente()
+
+        return encontrado
+
+    def eliminar(self,item):
+        actual = self.primero
+        previo = None
+        encontrado = False
+        while actual != None and not encontrado:
+            if actual.obtenerDato().EsIgualALLave(item):
+                encontrado = True
+            else:
+                previo = actual
+                actual = actual.obtenerSiguiente()
+
+        if previo == None:
+            if self.primero != None:
+                self.primero = actual.obtenerSiguiente()
+                print("Eliminado1")
+        else:
+            if encontrado:
+                previo.asignarSiguiente(actual.obtenerSiguiente())
+                print("Eliminado2")
+            else:
+                print("no encontrado")
