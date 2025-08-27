@@ -8,7 +8,7 @@ from SistemaArchivos import SistemArchivos
 class Sistema:
     def __init__(self):
         self.archivo = None
-        self.camposcultio = ListaSimple()
+        self.camposcultivo = ListaSimple()
         self.estacionesbase = []
         self.sensoresSuelo = [] 
         self.sensoresCultivo = []
