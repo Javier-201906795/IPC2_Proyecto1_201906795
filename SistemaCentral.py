@@ -96,36 +96,30 @@ class Sistema:
                         break
                     #>>> Obtener items medianos
                     for it in SensorSuelo:
-                        # print("-*-"*10)
-                        # print(it.toprettyxml())
-                        # print("-*-"*10)
                         sensorS = self.Buscarcampo(buscar2)
-                        print("/*/"*10)
-                        for nodo in sensorS:
-                            print(nodo.toprettyxml())
-                        print("/*/"*10)
                         #>> Validar
                         if sensorS == None:
                             print(f">>>> No hay {buscar2}. cargue otro documento.")
                             break
                         #>>>> Obtener Atributos     
                         for it2 in sensorS:
-                            print("###"*5)
-                            print(it2.toprettyxml())
-                            print("###"*5)
                             id = it2.getAttribute('id')
                             nombre = it2.getAttribute('nombre')
                             print(">>> SensorS ID: ", id, " - Nombre: ", nombre)
-                            #>>>>> Guardar estacion
-                            self.sensoresSuelo.append([id, nombre])
+                            # #>>>>> Guardar estacion
+                            # self.sensoresSuelo.append([id, nombre])
                             #> Obtener items pequeños
-                            buscar3 = 'frecuencia'
-                            frecuencias = self.Buscarcampo(buscar3)
-                            # for nodo in frecuencias:
-                            #     print(nodo.toprettyxml())
-
+                            frecuencia_item = it2.getElementsByTagName('frecuencia')
+                            for frecu in frecuencia_item:
+                                id2 = frecu.getAttribute('idEstacion')
+                                valor2 = frecu.firstChild.data
+                                print(f"ID: {id2} - Valor: {valor2}")
+                                #>>>>> Guardar estacion
+                                self.sensoresSuelo.append([id, nombre,id2, valor2])
+                        #Imprimir valores
+                        print("-"*30)
                         print(self.sensoresSuelo)
-                    
+                        print("-"*30)
                         
 
 
