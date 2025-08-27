@@ -1,10 +1,13 @@
 
+from ListaSimple import ListaSimple
+
+
 
 from SistemaArchivos import SistemArchivos
 
 class Sistema:
     def __init__(self):
-        self.campos = None
+        self.archivo = None
         self.estacionesbase = []
         self.sensoresSuelo = [] 
         self.sensoresCultivo = []
@@ -18,10 +21,10 @@ class Sistema:
         rutacompleta = "G:\\2020\\2020_USAC\\Semestre14(2025)\\IPC2\\1_Laboratorio\\4_PROYECTO1\\IPC2_Proyecto1_201906795\\archivoejemplo.xml"
         print(rutacompleta)
         #Recivir lectura
-        self.campos = SA.leerArchivo(rutacompleta)
-        print(self.campos)
+        self.archivo = SA.leerArchivo(rutacompleta)
+        print(self.archivo)
         #Validar
-        if self.campos != None:
+        if self.archivo != None:
             print(">>> Archivo cargado correctamente.")
         else:
             print("¡¡¡ Ocurio un error al cargar los archivos !!!")
@@ -32,7 +35,7 @@ class Sistema:
 
     def Buscarcampo(self, elemento):
         print(">>>> Buscando: ", elemento)
-        for campo in self.campos:
+        for campo in self.archivo:
             try:
                 estacionebaseitem = campo.getElementsByTagName(str(elemento))
                 #>> Verificar si hay estaciones base
@@ -48,10 +51,10 @@ class Sistema:
 
 
     def SegmentarDatos(self):
-        if self.campos != None:
+        if self.archivo != None:
             print(">>> Procesando datos...")
             #Recorrer datos
-            for campo in self.campos:
+            for campo in self.archivo:
                 try:
                     #Obtener ID
                     id = campo.getAttribute('id')
