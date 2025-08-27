@@ -47,7 +47,7 @@ class Sistema:
                     print(e)
 
 
-    def ProcesarDatos(self):
+    def SegmentarDatos(self):
         if self.campos != None:
             print(">>> Procesando datos...")
             #Recorrer datos
@@ -165,7 +165,7 @@ class Sistema:
                         print()
 
                 except Exception as e:
-                    print("¡¡¡ Error al procesar datos !!!")
+                    print("¡¡¡ Error al segmentar los datos !!!")
                     print(e)
         else:
-            print("¡¡¡ No hay datos para procesar !!!")
+            print("¡¡¡ No hay datos para segmentar !!!")

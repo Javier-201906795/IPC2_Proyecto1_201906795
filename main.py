@@ -30,7 +30,8 @@ while True:
 
         elif ingreseopcion == 2:
             print(">> Procesar el Archivo.")
-            Sys.ProcesarDatos()
+            #Segmentar el archivo en categorias (sensores)
+            Sys.SegmentarDatos()
 
         elif ingreseopcion == 3:
             print(">> Menu Escribir archivo de salida.")
