@@ -1,6 +1,6 @@
 
 from ListaSimple import ListaSimple
-
+from EstacionyFrecuencias import Estacion, Frecuencia
 
 
 from SistemaArchivos import SistemArchivos
@@ -82,7 +82,8 @@ class Sistema:
                         for estacion in estaciones:
                             estacion_id = estacion.getAttribute('id')
                             estacion_nombre = estacion.getAttribute('nombre')
-                            print(">>> Estacion ID: ", estacion_id, " - Nombre: ", estacion_nombre)
+                            estacion_nodo = Estacion(estacion_id, estacion_nombre)
+                            print(">>> Estacion_nodo: ", estacion_nodo.idE, " - Nombre: ", estacion_nodo.nombreE)
                             #>>>>> Guardar estacion
                             self.estacionesbase.append([estacion_id, estacion_nombre])
                         #Imprimir valores
