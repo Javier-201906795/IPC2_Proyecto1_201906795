@@ -1,6 +1,6 @@
 
 from ListaSimple import ListaSimple
-from EstacionyFrecuencias import Estacion, Frecuencia
+from NodosSistema import Estacion, Frecuencia
 
 
 from SistemaArchivos import SistemArchivos
