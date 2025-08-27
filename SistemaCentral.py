@@ -6,6 +6,7 @@ class Sistema:
     def __init__(self):
         self.campos = None
         self.estacionesbase = []
+        self.sensoresSuelo = [] 
 
     def CargarArchivos(self, rutacompleta):
         print(">> Cargando archivos...")
@@ -79,8 +80,51 @@ class Sistema:
                             print(">>> Estacion ID: ", estacion_id, " - Nombre: ", estacion_nombre)
                             #>>>>> Guardar estacion
                             self.estacionesbase.append([estacion_id, estacion_nombre])
-                        
                         print(self.estacionesbase)
+                    
+
+                    #> Cargar sensor Suelo
+                    buscar = 'sensoresSuelo'
+                    buscar2 = 'sensorS'
+                    SensorSuelo = self.Buscarcampo(buscar)
+                    print("Sensores Suelo: ", SensorSuelo)
+                    # for nodo in SensorSuelo:
+                    #     print(nodo.toprettyxml())
+                    #>> Validar 
+                    if SensorSuelo == None:
+                        print(f">>>> No se encontro {buscar}. Cargue otro documento.")
+                        break
+                    #>>> Obtener items medianos
+                    for it in SensorSuelo:
+                        # print("-*-"*10)
+                        # print(it.toprettyxml())
+                        # print("-*-"*10)
+                        sensorS = self.Buscarcampo(buscar2)
+                        print("/*/"*10)
+                        for nodo in sensorS:
+                            print(nodo.toprettyxml())
+                        print("/*/"*10)
+                        #>> Validar
+                        if sensorS == None:
+                            print(f">>>> No hay {buscar2}. cargue otro documento.")
+                            break
+                        #>>>> Obtener Atributos     
+                        for it2 in sensorS:
+                            print("###"*5)
+                            print(it2.toprettyxml())
+                            print("###"*5)
+                            id = it2.getAttribute('id')
+                            nombre = it2.getAttribute('nombre')
+                            print(">>> SensorS ID: ", id, " - Nombre: ", nombre)
+                            #>>>>> Guardar estacion
+                            self.sensoresSuelo.append([id, nombre])
+                            #> Obtener items pequeños
+                            buscar3 = 'frecuencia'
+                            frecuencias = self.Buscarcampo(buscar3)
+                            # for nodo in frecuencias:
+                            #     print(nodo.toprettyxml())
+
+                        print(self.sensoresSuelo)
                     
                         
 
