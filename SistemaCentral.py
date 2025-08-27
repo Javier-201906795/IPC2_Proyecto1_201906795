@@ -69,7 +69,7 @@ class Sistema:
                         break
                     #>>> Obtener estaciones
                     for estacionbase in estacionbaseitem:
-                        estaciones = self.Buscarcampo('estacion')
+                        estaciones = estacionbase.getElementsByTagName('estacion')
                         #>> Validar estaciones
                         if estaciones == None:
                             print(">>>> No hay estaciones. cargue otro documento.")
@@ -102,7 +102,7 @@ class Sistema:
                         break
                     #>>> Obtener items medianos
                     for it in SensorSuelo:
-                        sensorS = self.Buscarcampo(buscar2)
+                        sensorS = it.getElementsByTagName(buscar2)
                         #>> Validar
                         if sensorS == None:
                             print(f">>>> No hay {buscar2}. cargue otro documento.")
