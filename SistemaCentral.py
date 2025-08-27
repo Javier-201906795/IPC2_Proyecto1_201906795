@@ -154,9 +154,10 @@ class Sistema:
                             #>>>>> Obtener Elemento frecuencia
                             frecuencia_item = sensorT.getElementsByTagName('frecuencia')
                             for frecuencia in frecuencia_item:
-                                idfrecuencia = frecuencia.getAttribute('id')
+                                idfrecuencia = frecuencia.getAttribute('idEstacion')
                                 valorfrecuencia = frecuencia.firstChild.data
-                                print(f"ID: {idfrecuencia} - Valor: {valorfrecuencia}")
+                                frecuencia_nodo = Frecuencia(idfrecuencia, valorfrecuencia)
+                                print("- Frecuencia_nodo: ", frecuencia_nodo.idF, " - Valor: ", frecuencia_nodo.valorF)
                                 #>>>>> Guardar Sensor T
                                 self.sensoresCultivo.append([sensorT_id, sensorT_nombre, idfrecuencia, valorfrecuencia])
                         #Imprimir valores
