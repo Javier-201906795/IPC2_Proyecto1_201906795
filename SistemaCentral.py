@@ -120,7 +120,8 @@ class Sistema:
                             for frecu in frecuencia_item:
                                 id2 = frecu.getAttribute('idEstacion')
                                 valor2 = frecu.firstChild.data
-                                print(f"ID: {id2} - Valor: {valor2}")
+                                frecuencia_nodo = Frecuencia(id2, valor2)
+                                print("- Frecuencia_nodo: ", frecuencia_nodo.idF, " - Valor: ", frecuencia_nodo.valorF)
                                 #>>>>> Guardar estacion
                                 self.sensoresSuelo.append([id, nombre,id2, valor2])
                         #Imprimir valores
