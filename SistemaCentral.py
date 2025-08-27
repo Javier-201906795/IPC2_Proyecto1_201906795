@@ -7,6 +7,7 @@ class Sistema:
         self.campos = None
         self.estacionesbase = []
         self.sensoresSuelo = [] 
+        self.sensoresCultivo = []
 
     def CargarArchivos(self, rutacompleta):
         print(">> Cargando archivos...")
@@ -129,8 +130,39 @@ class Sistema:
                         print()
 
                 #############################################################################
-                    
-
+                    #> Cargar Sensores Cultivo
+                    sensorcultivoitem = self.Buscarcampo('sensoresCultivo')
+                    print("sensoresCultivo: ", sensorcultivoitem)
+                    #>> Validar
+                    if sensorcultivoitem == None:
+                        print(">>>> No hay sensores de cultivo. cargue otro documento.")
+                        break
+                    #>>> Obtener sensores T
+                    for estacionbase in sensorcultivoitem:
+                        sensorT_item = estacionbase.getElementsByTagName('sensorT')
+                        #>> Validar 
+                        if sensorT_item == None:
+                            print(">>>> No hay sensores T. cargue otro documento.")
+                            break
+                        #>>>> Obtener Atributos     
+                        for sensorT in sensorT_item:
+                            sensorT_id = sensorT.getAttribute('id')
+                            sensorT_nombre = sensorT.getAttribute('nombre')
+                            print(">>> SensorT ID: ", sensorT_id, " - Nombre: ", sensorT_nombre)
+                            #>>>>> Obtener Elemento frecuencia
+                            frecuencia_item = sensorT.getElementsByTagName('frecuencia')
+                            for frecuencia in frecuencia_item:
+                                idfrecuencia = frecuencia.getAttribute('id')
+                                valorfrecuencia = frecuencia.firstChild.data
+                                print(f"ID: {idfrecuencia} - Valor: {valorfrecuencia}")
+                                #>>>>> Guardar Sensor T
+                                self.sensoresCultivo.append([sensorT_id, sensorT_nombre, idfrecuencia, valorfrecuencia])
+                        #Imprimir valores
+                        print()
+                        print("-"*10 + " Sensores Cultivo " + "-"*10)
+                        print(self.sensoresCultivo)
+                        print("-"*30)
+                        print()
 
                 except Exception as e:
                     print("¡¡¡ Error al procesar datos !!!")
