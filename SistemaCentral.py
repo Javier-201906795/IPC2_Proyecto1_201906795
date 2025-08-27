@@ -1,5 +1,5 @@
 
-from ListaSimple import ListaSimple
+from ListaSimpleyPila import ListaSimple
 from EstacionyFrecuencias import Estacion, Frecuencia
 
 
