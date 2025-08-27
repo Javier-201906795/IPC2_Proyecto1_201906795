@@ -58,7 +58,7 @@ class Sistema:
                     nombre = campo.getAttribute('nombre')
                     print("ID: ", id, " - Nombre: ", nombre)
 
-
+            #############################################################################
                     #> Cargar Estaciones Base
                     estacionbaseitem = self.Buscarcampo('estacionesBase')
                     print("Estaciones Base: ", estacionbaseitem)
@@ -80,9 +80,14 @@ class Sistema:
                             print(">>> Estacion ID: ", estacion_id, " - Nombre: ", estacion_nombre)
                             #>>>>> Guardar estacion
                             self.estacionesbase.append([estacion_id, estacion_nombre])
+                        #Imprimir valores
+                        print()
+                        print("-"*10 + " Estaciones Base " + "-"*10)
                         print(self.estacionesbase)
+                        print("-"*30)
+                        print()
                     
-
+            #############################################################################
                     #> Cargar sensor Suelo
                     buscar = 'sensoresSuelo'
                     buscar2 = 'sensorS'
@@ -117,12 +122,13 @@ class Sistema:
                                 #>>>>> Guardar estacion
                                 self.sensoresSuelo.append([id, nombre,id2, valor2])
                         #Imprimir valores
-                        print("-"*30)
+                        print()
+                        print("-"*10 + " Sensores Suelo " + "-"*10)
                         print(self.sensoresSuelo)
                         print("-"*30)
-                        
+                        print()
 
-
+                #############################################################################
                     
 
 
