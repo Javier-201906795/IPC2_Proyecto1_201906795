@@ -18,60 +18,6 @@ class Nodo:
 
 ########################################################################
 
-class Pila:
-
-    def __init__(self):
-        self.primero = None
-    
-    def obtenerPrimero(self):
-        return self.primero
-
-    def estaVacia(self):
-        return self.primero == None
-
-    def Push(self,item):
-        nuevo = Nodo(item)
-        nuevo.asignarSiguiente(self.primero)
-        self.primero = nuevo
-
-    def tamano(self):
-        actual = self.primero
-        contador = 0
-        while actual != None:
-            contador = contador + 1
-            actual = actual.obtenerSiguiente()
-        return contador
-
-    def desplegar(self):
-        actual = self.primero
-        while actual != None:
-            actual.obtenerDato().desplegar()
-            actual = actual.obtenerSiguiente()
-
-    def buscar(self,item):
-        actual = self.primero
-        encontrado = False
-        while actual != None and not encontrado:
-            if actual.obtenerDato().EsIgualALLave(item):
-                encontrado = True
-            else:
-                actual = actual.obtenerSiguiente()
-
-        return encontrado
-
-    def Pop(self):
-        if self.estaVacia():
-            return None
-        
-        previo = self.primero
-        self.primero = self.primero.obtenerSiguiente()
-
-        return previo.obtenerDato()
-
-
-########################################################################
-
-
 class ListaSimple:
 
     def __init__(self):
