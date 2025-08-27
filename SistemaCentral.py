@@ -99,8 +99,6 @@ class Sistema:
                     buscar2 = 'sensorS'
                     SensorSuelo = self.Buscarcampo(buscar)
                     print("Sensores Suelo: ", SensorSuelo)
-                    # for nodo in SensorSuelo:
-                    #     print(nodo.toprettyxml())
                     #>> Validar 
                     if SensorSuelo == None:
                         print(f">>>> No se encontro {buscar}. Cargue otro documento.")
@@ -117,8 +115,6 @@ class Sistema:
                             id = it2.getAttribute('id')
                             nombre = it2.getAttribute('nombre')
                             print(">>> SensorS ID: ", id, " - Nombre: ", nombre)
-                            # #>>>>> Guardar estacion
-                            # self.sensoresSuelo.append([id, nombre])
                             #> Obtener items pequeños
                             frecuencia_item = it2.getElementsByTagName('frecuencia')
                             for frecu in frecuencia_item:
