@@ -17,7 +17,7 @@ class Estacion(InfoNodo):
         self.nombreE = nombre
     
     def desplegar(self):
-        print(f'Estacion_ID: {self.idE}  |  Estacion_Nombre: {self.nombreE}')
+        print(f'- Estacion>> ID: {self.idE}  |  Nombre: {self.nombreE}')
     
     def EsIgualALLave(self, id):
         return self.idE == id
@@ -33,7 +33,7 @@ class Frecuencia(InfoNodo):
         self.valorF = int(valor.strip())
     
     def desplegar(self):
-        print(f'Frecuencia_ID: {self.idF}  |  Frecuencia_Valor: {self.valorF}')
+        print(f'- Frecuencia>> ID: {self.idF}  |  Valor: {self.valorF}')
 
     def EsIgualALLave(self):
         return self.idF == id

@@ -83,7 +83,7 @@ class Sistema:
                             estacion_id = estacion.getAttribute('id')
                             estacion_nombre = estacion.getAttribute('nombre')
                             estacion_nodo = Estacion(estacion_id, estacion_nombre)
-                            print(">>> Estacion_nodo: ", estacion_nodo.idE, " - Nombre: ", estacion_nodo.nombreE)
+                            estacion_nodo.desplegar()
                             #>>>>> Guardar estacion
                             self.estacionesbase.append([estacion_id, estacion_nombre])
                         #Imprimir valores
@@ -121,7 +121,7 @@ class Sistema:
                                 id2 = frecu.getAttribute('idEstacion')
                                 valor2 = frecu.firstChild.data
                                 frecuencia_nodo = Frecuencia(id2, valor2)
-                                print("- Frecuencia_nodo: ", frecuencia_nodo.idF, " - Valor: ", frecuencia_nodo.valorF)
+                                frecuencia_nodo.desplegar()
                                 #>>>>> Guardar estacion
                                 self.sensoresSuelo.append([id, nombre,id2, valor2])
                         #Imprimir valores
@@ -157,7 +157,7 @@ class Sistema:
                                 idfrecuencia = frecuencia.getAttribute('idEstacion')
                                 valorfrecuencia = frecuencia.firstChild.data
                                 frecuencia_nodo = Frecuencia(idfrecuencia, valorfrecuencia)
-                                print("- Frecuencia_nodo: ", frecuencia_nodo.idF, " - Valor: ", frecuencia_nodo.valorF)
+                                frecuencia_nodo.desplegar()
                                 #>>>>> Guardar Sensor T
                                 self.sensoresCultivo.append([sensorT_id, sensorT_nombre, idfrecuencia, valorfrecuencia])
                         #Imprimir valores
