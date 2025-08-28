@@ -1,5 +1,6 @@
 from NodosSistema import *
 from ListaSimple import ListaSimple 
+from Matriz import Matriz
 
 
 class CampoAgricola(InfoNodo):
@@ -9,6 +10,8 @@ class CampoAgricola(InfoNodo):
         self.estaciones_base = ListaSimple()
         self.sensores_suelo = ListaSimple()
         self.sensores_cultivo = ListaSimple()
+        self.matriz_suelo = None
+        self.matriz_cultivo = None
 
     def desplegar(self):
         print()
@@ -35,7 +38,14 @@ class CampoAgricola(InfoNodo):
             numero_sensores_cultivo = self.sensores_cultivo.tamano()
 
             #Crear Matrices
-            
+            self.matriz_suelo = Matriz(numero_estaciones, numero_sensores_suelo)
+            self.matriz_cultivo = Matriz(numero_estaciones, numero_sensores_cultivo)
+
+            print(">>>> Matrices Vacias Creadas")
+            print(">>>> Matriz Suelo")
+            self.matriz_suelo.desplegar()
+            print(">>>> Matriz Cultivo")    
+            self.matriz_cultivo.desplegar()
 
         except Exception as e:
             print("¡¡¡ Error al realizar matrices !!!")

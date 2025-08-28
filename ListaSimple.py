@@ -22,6 +22,9 @@ class ListaSimple:
 
     def __init__(self):
         self.primero = None
+    
+    def obtenerprimero(self):
+        return self.primero
 
     def estaVacia(self):
         return self.primero == None
