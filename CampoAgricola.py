@@ -155,7 +155,7 @@ class CampoAgricola(InfoNodo):
             #>Cultivo
             max_columna = self.matriz_cultivo.numero_columnas
             max_fila = self.matriz_cultivo.numero_filas
-            print("-"*5+"[Matriz Cultivo]")
+            print("-"*5+"[Matriz Cultivo PATRON]")
             for i in range(max_columna):
                 for j in range(max_fila):
                     print(f'[{i},{j}]')
@@ -182,7 +182,36 @@ class CampoAgricola(InfoNodo):
             print("-"*10+"[ Matriz Patron Cultivo ]"+"-"*10)
             self.matriz_cultivo_Patron.desplegar()
             
-            
+            #################################################
+            #>Suelo
+            max_columna = self.matriz_suelo.numero_columnas
+            max_fila = self.matriz_suelo.numero_filas
+            print("-"*5+"[Matriz Suelo PATRON]")
+            for i in range(max_columna):
+                for j in range(max_fila):
+                    print(f'[{i},{j}]')
+                    self.matriz_suelo.datocasilla(i,j).desplegar()
+                    #Obtener Valor casilla
+                    casilla = self.matriz_suelo.datocasilla(i,j)
+                    valor = casilla.valor
+                    #Convertir a numero
+                    try:
+                        valornumero = int(valor)
+                        #convertir
+                        if valornumero != 0:
+                            print("cambiar -> 1")
+                            datonuevo = Frecuencia(casilla.id,"1")
+                            #Rempalzar
+                            self.matriz_suelo_Patron.asignarValor(j,i,datonuevo)
+                        else:
+                            datonuevo = Frecuencia(casilla.id,"0")
+                            #Rempalzar
+                            self.matriz_suelo_Patron.asignarValor(j,i,datonuevo)
+                    except:
+                        print(f"¡¡¡ No se pudo convertir en valor la casilla [{i},{j}] !!!")
+                    
+            print("-"*10+"[ Matriz Patron Suelo ]"+"-"*10)
+            self.matriz_suelo_Patron.desplegar()
 
 
 
