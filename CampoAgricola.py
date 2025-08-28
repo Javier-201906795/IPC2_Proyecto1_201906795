@@ -228,3 +228,10 @@ class CampoAgricola(InfoNodo):
 
         except:
             print("¡¡¡ Ocurrio un error al formar Matrices Patron !!!")
+
+
+    def CrearMatricesReducidas(self):
+        try:
+            print("\n>>> Procesando Matrices Reducidas...\n")
+        except Exception as e:
+            print("\n¡¡¡ Ocurrio un error al crear matrices Reducidas !!!")

@@ -198,8 +198,15 @@ class Sistema:
 
                     ##########################################
                     #Crear Marices PATRON
-                    print("\n>>> Creando matrices Patron")
+                    print("\n>>> Creando matrices Patron...")
                     campo_Agricola.CrearMatricesPatron()
+                    ##########################################
+
+                    ##########################################
+                    #Crear Matrices REDUCIDAS
+                    print("\n>>> Creando matrices Reducidas...")
+                    campo_Agricola.CrearMatricesReducidas()
+
                     ##########################################
 
                     #Alamacenar Campo
