@@ -27,7 +27,7 @@ class Matriz:
         print("-"*10+"[Matriz]"+"-"*10)
 
         for i in range(self.matriz.tamano()):
-            print("Columna", i,"-"*10)
+            print("Columna", (i+1),"-"*10)
             for j in range(self.numero_filas):
                 dato = self.datocasilla(i,j)
                 dato.desplegar()
