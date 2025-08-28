@@ -8,8 +8,8 @@ class SistemArchivos:
     def leerArchivo(self, ruta):
             try:
                 Dom = parse(ruta)
-                campos_xml = Dom.getElementsByTagName('campo')
-                return campos_xml
+                # campos_xml = Dom.getElementsByTagName('campo')
+                return Dom
                 
             except Exception as e:
                 print("¡¡¡ Error al cargar archivos !!!")

@@ -23,7 +23,7 @@ class Sistema:
         print(rutacompleta)
         #Recivir lectura
         self.archivo = SA.leerArchivo(rutacompleta)
-        print(self.archivo)
+        print("Archivo: ",self.archivo)
         #Validar
         if self.archivo != None:
             print(">>> Archivo cargado correctamente.")
@@ -34,32 +34,35 @@ class Sistema:
 
 
 
-    def Buscarcampo(self, elemento):
+    def Buscarcampo(self, elemento,segmentoArchivo):
         print(">>>> Buscando: ", elemento)
-        for campo in self.archivo:
-            try:
-                estacionebaseitem = campo.getElementsByTagName(str(elemento))
-                #>> Verificar si hay estaciones base
-                if estacionebaseitem:
-                    return estacionebaseitem
-                else:
-                    print(f"¡¡¡ No se encontro: {elemento} en el documento. !!!")
-                    print(">>> No se puede procesar intenta cargar un archivo nuevo")
-                    return None
-            except Exception as e:
-                    print(f"¡¡¡ Error al procesar datos, Error buscando {elemento} !!!")
-                    print(e)
+        
+        try:
+            estacionebaseitem = segmentoArchivo.getElementsByTagName(str(elemento))
+            #>> Verificar si hay estaciones base
+            if estacionebaseitem:
+                return estacionebaseitem
+            else:
+                print(f"¡¡¡ No se encontro: {elemento} en el documento. !!!")
+                print(">>> No se puede procesar intenta cargar un archivo nuevo")
+                return None
+        except Exception as e:
+                print(f"¡¡¡ Error al procesar datos, Error buscando {elemento} !!!")
+                print(e)
 
 
     def SegmentarDatos(self):
-        #imprimir
-        for nodo in self.archivo:
-            print(nodo.toprettyxml())
 
-        if self.archivo != None:
+        #Obtener campos
+        campos_item = self.archivo.getElementsByTagName('campo')
+        # #imprimir
+        # for nodo in campos_item:
+        #     print(nodo.toprettyxml())
+
+        if campos_item != None:
             print(">>> Procesando datos...")
             #Recorrer datos
-            for campo in self.archivo:
+            for campo in campos_item:
                 try:
                     #Obtener ID
                     id = campo.getAttribute('id')
@@ -69,7 +72,7 @@ class Sistema:
 
             #############################################################################
                     #> Cargar Estaciones Base
-                    estacionbaseitem = self.Buscarcampo('estacionesBase')
+                    estacionbaseitem = self.Buscarcampo('estacionesBase', campo)
                     print("Estaciones Base: ", estacionbaseitem)
                     #>> Validar Estacion Base
                     if estacionbaseitem == None:
@@ -101,7 +104,7 @@ class Sistema:
                     #> Cargar sensor Suelo
                     buscar = 'sensoresSuelo'
                     buscar2 = 'sensorS'
-                    SensorSuelo = self.Buscarcampo(buscar)
+                    SensorSuelo = self.Buscarcampo(buscar,campo)
                     print("Sensores Suelo: ", SensorSuelo)
                     #>> Validar 
                     if SensorSuelo == None:
@@ -137,7 +140,7 @@ class Sistema:
 
                 #############################################################################
                     #> Cargar Sensores Cultivo
-                    sensorcultivoitem = self.Buscarcampo('sensoresCultivo')
+                    sensorcultivoitem = self.Buscarcampo('sensoresCultivo', campo)
                     print("sensoresCultivo: ", sensorcultivoitem)
                     #>> Validar
                     if sensorcultivoitem == None:
