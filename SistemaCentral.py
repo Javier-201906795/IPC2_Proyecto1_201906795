@@ -1,6 +1,6 @@
 
 from ListaSimple import ListaSimple
-from NodosSistema import Estacion, Frecuencia
+from NodosSistema import Estacion, Frecuencia, SensorSuelo, SensorCultivo
 from CampoAgricola import CampoAgricola
 
 
@@ -100,7 +100,7 @@ class Sistema:
                             
                         #Imprimir valores
                         print()
-                        print("-"*10 + " Estaciones Base " + "-"*10)
+                        print("°"+"-"*10 + " Estaciones Base " + "-"*10)
                         campo_Agricola.estaciones_base.desplegar()
                         print("-"*30)
                         print()
@@ -109,14 +109,14 @@ class Sistema:
                     #> Cargar sensor Suelo
                     buscar = 'sensoresSuelo'
                     buscar2 = 'sensorS'
-                    SensorSuelo = self.Buscarcampo(buscar,campo)
-                    print("Sensores Suelo: ", SensorSuelo)
+                    SensorSuelo_item = self.Buscarcampo(buscar,campo)
+                    print("Sensores Suelo: ", SensorSuelo_item)
                     #>> Validar 
-                    if SensorSuelo == None:
+                    if SensorSuelo_item == None:
                         print(f">>>> No se encontro {buscar}. Cargue otro documento.")
                         break
                     #>>> Obtener items medianos
-                    for it in SensorSuelo:
+                    for it in SensorSuelo_item:
                         sensorS = it.getElementsByTagName(buscar2)
                         #>> Validar
                         if sensorS == None:
@@ -126,7 +126,8 @@ class Sistema:
                         for it2 in sensorS:
                             id = it2.getAttribute('id')
                             nombre = it2.getAttribute('nombre')
-                            print(">>> SensorS ID: ", id, " - Nombre: ", nombre)
+                            Sensor_Suelo = SensorSuelo(id, nombre)
+                            Sensor_Suelo.desplegar()
                             #> Obtener items pequeños
                             frecuencia_item = it2.getElementsByTagName('frecuencia')
                             for frecu in frecuencia_item:
@@ -134,12 +135,14 @@ class Sistema:
                                 valor2 = frecu.firstChild.data
                                 frecuencia_nodo = Frecuencia(id2, valor2)
                                 frecuencia_nodo.desplegar()
-                                #>>>>> Guardar estacion
-                                self.sensoresSuelo.append([id, nombre,id2, valor2])
-                        #Imprimir valores
+                                #>>>>> Guardar Lectura
+                                Sensor_Suelo.agregarLectura(frecuencia_nodo)
+                            #Guardar Sensor
+                            campo_Agricola.sensores_suelo.agregar(Sensor_Suelo)
+                        #Imprimir valores sensor
                         print()
-                        print("-"*10 + " Sensores Suelo " + "-"*10)
-                        print(self.sensoresSuelo)
+                        print("°°"+"-"*10 + " Sensores Suelo " + "-"*10)
+                        campo_Agricola.sensores_suelo.desplegar()
                         print("-"*30)
                         print()
 
@@ -162,6 +165,9 @@ class Sistema:
                         for sensorT in sensorT_item:
                             sensorT_id = sensorT.getAttribute('id')
                             sensorT_nombre = sensorT.getAttribute('nombre')
+                            #Crear Nodo Sensor T
+                            # Sensor_Cultivo = SensorCultivo(sensorT_id, sensorT_nombre)
+                            # Sensor_Cultivo.desplegar()
                             print(">>> SensorT ID: ", sensorT_id, " - Nombre: ", sensorT_nombre)
                             #>>>>> Obtener Elemento frecuencia
                             frecuencia_item = sensorT.getElementsByTagName('frecuencia')
@@ -174,7 +180,7 @@ class Sistema:
                                 self.sensoresCultivo.append([sensorT_id, sensorT_nombre, idfrecuencia, valorfrecuencia])
                         #Imprimir valores
                         print()
-                        print("-"*10 + " Sensores Cultivo " + "-"*10)
+                        print("°°"+"-"*10 + " Sensor Cultivo " + "-"*10)
                         print(self.sensoresCultivo)
                         print("-"*30)
                         print()

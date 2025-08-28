@@ -56,7 +56,13 @@ class SensorSuelo(InfoNodo):
     
     def desplegar(self):
         print(f'>>> Sensor Suelo>> ID: {self.id}  |  Nombre: {self.nombre}')
-    
+        print(f'>>> Lecturas Sensor Suelo>>')
+        self.lecturas.desplegar()
+
+        
+
+    def agregarLectura(self, lectura):
+        self.lecturas.agregar(lectura)
 
 ############################################################
 
@@ -71,3 +77,10 @@ class SensorCultivo(InfoNodo):
 
     def desplegar(self):
         print(f'>>> Sensor Cultivo>> ID: {self.id}  |  Nombre: {self.nombre}')
+        print(f'>>> Lecturas Sensor Cultivo>>')
+        self.lecturas.desplegar()
+
+        
+
+    def agregarLectura(self, lectura):
+        self.lecturas.agregar(lectura)
