@@ -95,9 +95,11 @@ class CampoAgricola(InfoNodo):
                     frecuencia_valor.desplegar()
                     #Obtener posicion fila
                     n_fila = self.estaciones_base.buscar_indice(frecuencia_valor.id)
-                    if n_fila != -1:
+                    #Cambiar posicion fila mandar al fondo
+                    n_fila_nueva = frecuencias_lista.tamano() - n_fila - 1
+                    if n_fila_nueva != -1:
                         #Guardar en matriz
-                        self.matriz_cultivo.asignarValor(n_fila,n_columna,frecuencia_valor)
+                        self.matriz_cultivo.asignarValor(n_fila_nueva,n_columna,frecuencia_valor)
                     frecuencia_actual = frecuencia_actual.siguiente
 
                 
@@ -107,6 +109,8 @@ class CampoAgricola(InfoNodo):
             self.matriz_suelo.desplegar()
             print(">>>> Matriz Cultivo")
             self.matriz_cultivo.desplegar()
+            print("casilla [0,0]")
+            print("casilla [0,0]")
 
         except Exception as e:
             print("¡¡¡ Error al realizar matrices !!!")
