@@ -236,18 +236,42 @@ class CampoAgricola(InfoNodo):
             
             ###############################################################
             print("\n>>>> Procesadno Matriz PATRON Sensores")
+            
+            
             #Obtener Valores Fila
             max_colum = self.matriz_suelo_Patron.numero_columnas
             max_fila = self.matriz_suelo_Patron.numero_filas
             print(f'columnas: {max_colum} y filas: {max_fila}')
-            #Variable Fila
-            Fila = None
+            #Almacenar FILAS
+            ListaFilas = ListaSimple()
+            FilaValores = ""
+            contador = 0
             #Recorrer matriz
             for i in range(max_colum):
                 for j in range(max_fila):
                     print(f'[{i},{j}]')
-                    valoractual = self.matriz_suelo_Patron.datocasilla(i,j)
-                    valoractual.desplegar()
+                    casillactual = self.matriz_suelo_Patron.datocasilla(i,j)
+                    casillactual.desplegar()
+                    valoractual = casillactual.valor
+                    #Almacenar
+                    FilaValores += str(valoractual)+","
+                    print(FilaValores)
+                #Imprimir valores Fila
+                print(f">>> Columna: {i} \n>>>> FilaValores:")
+                print(FilaValores)
+                print()
+                #Guardar Fila
+                nuevaFila = FilaD(contador,FilaValores)
+                ListaFilas.agregar(nuevaFila)
+                #Limpiar Fila
+                FilaValores = ""
+                #Contador
+                contador +=1
+            
+            #Resumen
+            print()
+            print('-'*10 + "[Filas Resumen]"+"-"*10)
+            ListaFilas.desplegar()
 
         except Exception as e:
             print("\n¡¡¡ Ocurrio un error al crear matrices Reducidas !!!")

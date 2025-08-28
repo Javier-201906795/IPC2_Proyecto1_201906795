@@ -92,3 +92,18 @@ class SensorCultivo(InfoNodo):
 
 
 ############################################################
+
+class FilaD(InfoNodo):
+    def __init__(self, fila, valor):
+        self.fila = fila
+        self.valor = valor
+    
+    def desplegar(self):
+        print(f'- Fila>> : {self.fila}  |  Valor: {self.valor}')
+
+    def EsIgualALLave(self, id):
+        return self.fila == id
+    
+    def cambiarvalor(self, valor):
+        self.valor = valor
+    
