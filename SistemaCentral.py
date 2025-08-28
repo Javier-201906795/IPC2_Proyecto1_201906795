@@ -10,9 +10,7 @@ class Sistema:
     def __init__(self):
         self.archivo = None
         self.camposcultivo = ListaSimple()
-        self.estacionesbase = []
-        self.sensoresSuelo = [] 
-        self.sensoresCultivo = []
+        
 
     def CargarArchivos(self, rutacompleta):
         print(">> Cargando archivos...")
