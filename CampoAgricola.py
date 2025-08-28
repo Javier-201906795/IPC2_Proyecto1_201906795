@@ -47,6 +47,18 @@ class CampoAgricola(InfoNodo):
             print(">>>> Matriz Cultivo")    
             self.matriz_cultivo.desplegar()
 
+            #Asignar Valores
+            self.matriz_suelo.asignarValor(0,0,ValorMatriz("e1","2251"))
+            self.matriz_suelo.asignarValor(1,1,ValorMatriz("e2","1500"))
+            self.matriz_suelo.asignarValor(1,4,ValorMatriz("e3","800"))
+            print()
+            print(">>>> Matrices")
+            print(">>>> Matriz Suelo")
+            self.matriz_suelo.desplegar()
+            print(">>>> Matriz Cultivo")    
+            self.matriz_cultivo.desplegar()
+
+
         except Exception as e:
             print("¡¡¡ Error al realizar matrices !!!")
             print(e)

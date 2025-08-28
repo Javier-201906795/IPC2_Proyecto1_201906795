@@ -27,12 +27,22 @@ class Matriz:
         print("-"*10+"[Matriz]"+"-"*10)
 
         for i in range(self.matriz.tamano()):
-            print("Columna", (i+1),"-"*10)
+            print("Columna", i,"-"*10)
             for j in range(self.numero_filas):
                 dato = self.datocasilla(i,j)
                 dato.desplegar()
 
-
+    def asignarValor(self, num_fila, num_columna, datonuevo):
+        # Establece un valor en la posicion [fila, columna]
+        fila = self.matriz.obtener(num_fila)
+        if fila:
+            # Buscar el nodo en la columna especifica
+            columna = fila.primero
+            for i in range(num_columna):
+                if columna:
+                    columna = columna.siguiente
+            if columna:
+                columna.valor = datonuevo
         
         
 
