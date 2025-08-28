@@ -13,6 +13,8 @@ class CampoAgricola:
     def desplegar(self):
         print(f'>>> Campo Agricola>> ID: {self.idC}  |  Nombre: {self.nombre}')
     
+    
+    
 
 
 

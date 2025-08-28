@@ -96,11 +96,12 @@ class Sistema:
                             estacion_nodo = Estacion(estacion_id, estacion_nombre)
                             estacion_nodo.desplegar()
                             #>>>>> Guardar estacion
-                            self.estacionesbase.append([estacion_id, estacion_nombre])
+                            campo_Agricola.estaciones_base.agregar(estacion_nodo)
+                            
                         #Imprimir valores
                         print()
                         print("-"*10 + " Estaciones Base " + "-"*10)
-                        print(self.estacionesbase)
+                        campo_Agricola.estaciones_base.desplegar()
                         print("-"*30)
                         print()
                     
