@@ -132,8 +132,24 @@ class CampoAgricola(InfoNodo):
             self.matriz_cultivo_Patron.desplegar()
 
             #Obtener datos de las matrices
+            #>Cultivo
             max_columna = self.matriz_cultivo.numero_columnas
             max_fila = self.matriz_cultivo.numero_filas
+            #cilo
+            for i in range(max_columna):
+                for j in range(max_fila):
+                    print(f'[{i},{j}]')
+                    self.matriz_cultivo.datocasilla(i,j).desplegar()
+            
+            print("-"*5+"datos, Suelo")
+            #>Suelo
+            max_columna = self.matriz_suelo.numero_columnas
+            max_fila = self.matriz_suelo.numero_filas
+            #cilo
+            for i in range(max_columna):
+                for j in range(max_fila):
+                    print(f'[{i},{j}]')
+                    self.matriz_suelo.datocasilla(i,j).desplegar()
             
             print(f'Columnas: {max_columna}  Filas: {max_fila}')
             
