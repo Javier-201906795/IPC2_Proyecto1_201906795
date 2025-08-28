@@ -26,8 +26,9 @@ class CampoAgricola(InfoNodo):
     def EsIgualALLave(self, id):
         return self.id == id
     
-    
-    
-
-
-
+    def RealizarMatrices(self):
+        try:
+            print(">>> Realizando matrices...")
+        except Exception as e:
+            print("¡¡¡ Error al realizar matrices !!!")
+            print(e)

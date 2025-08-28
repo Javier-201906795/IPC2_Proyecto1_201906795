@@ -189,6 +189,11 @@ class Sistema:
                     print("\n \n")
                     print("°"*10+" [ Resumen Campo Agricola ] "+"°"*10)
                     campo_Agricola.desplegar()
+
+                    #Crear Matrices
+                    print(">>> Agrupando en Matrices")
+                    campo_Agricola.RealizarMatrices()
+
                     #Alamacenar Campo
                     self.camposcultivo.agregar(campo_Agricola)
 
@@ -203,4 +208,5 @@ class Sistema:
     def desplegar(self):
         print("/"*10+" [ Lista Campos de Cultivo ] " + "/"*10)
         self.camposcultivo.desplegar()
-            
+
+    
