@@ -12,6 +12,8 @@ class CampoAgricola(InfoNodo):
         self.sensores_cultivo = ListaSimple()
         self.matriz_suelo = None
         self.matriz_cultivo = None
+        self.matriz_suelo_Patron = None
+        self.matriz_cultivo_Patron = None
 
     def desplegar(self):
         print()
@@ -50,7 +52,9 @@ class CampoAgricola(InfoNodo):
             #Crear Matrices
             self.matriz_suelo = Matriz(numero_estaciones, numero_sensores_suelo)
             self.matriz_cultivo = Matriz(numero_estaciones, numero_sensores_cultivo)
-
+            #Crear Matrices PATRON
+            self.matriz_suelo_Patron = Matriz(numero_estaciones, numero_sensores_suelo)
+            self.matriz_cultivo_Patron = Matriz(numero_estaciones, numero_sensores_cultivo)
 
             #Asignar Valores matriz Suelo
             for n_columna in range(numero_sensores_suelo):
@@ -121,5 +125,13 @@ class CampoAgricola(InfoNodo):
     def CrearMatricesPatron(self):
         try:
             print(">>>> tomando datos.")
+            #Imprimir para ver las matrices vacias
+            print(">> Matriz Suelo PATRON")
+            self.matriz_suelo_Patron.desplegar()
+            print(">> Matriz Cultivo PATRON")
+            self.matriz_cultivo_Patron.desplegar()
+
+
+
         except:
             print("¡¡¡ Ocurrio un error al formar Matrices Patron !!!")
