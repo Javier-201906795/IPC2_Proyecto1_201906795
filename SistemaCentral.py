@@ -166,9 +166,8 @@ class Sistema:
                             sensorT_id = sensorT.getAttribute('id')
                             sensorT_nombre = sensorT.getAttribute('nombre')
                             #Crear Nodo Sensor T
-                            # Sensor_Cultivo = SensorCultivo(sensorT_id, sensorT_nombre)
-                            # Sensor_Cultivo.desplegar()
-                            print(">>> SensorT ID: ", sensorT_id, " - Nombre: ", sensorT_nombre)
+                            Sensor_Cultivo = SensorCultivo(sensorT_id, sensorT_nombre)
+                            Sensor_Cultivo.desplegar()
                             #>>>>> Obtener Elemento frecuencia
                             frecuencia_item = sensorT.getElementsByTagName('frecuencia')
                             for frecuencia in frecuencia_item:
@@ -176,12 +175,15 @@ class Sistema:
                                 valorfrecuencia = frecuencia.firstChild.data
                                 frecuencia_nodo = Frecuencia(idfrecuencia, valorfrecuencia)
                                 frecuencia_nodo.desplegar()
-                                #>>>>> Guardar Sensor T
-                                self.sensoresCultivo.append([sensorT_id, sensorT_nombre, idfrecuencia, valorfrecuencia])
+                                #>>>>> Guardar Lectura
+                                Sensor_Cultivo.agregarLectura(frecuencia_nodo)
+                            #Guardar Sensor
+                            campo_Agricola.sensores_cultivo.agregar(Sensor_Cultivo)    
+                            
                         #Imprimir valores
                         print()
-                        print("°°"+"-"*10 + " Sensor Cultivo " + "-"*10)
-                        print(self.sensoresCultivo)
+                        print("°°°"+"-"*10 + " Sensores Cultivo " + "-"*10)
+                        campo_Agricola.sensores_cultivo.desplegar()
                         print("-"*30)
                         print()
 
