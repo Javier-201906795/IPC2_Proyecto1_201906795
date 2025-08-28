@@ -87,19 +87,5 @@ class SensorCultivo(InfoNodo):
 
     
 
-############################################################
-
-
-class ValorMatriz(InfoNodo):
-    def __init__(self, id, valor):
-        self.id = id
-        self.valor = int(valor.strip())
-    
-    def desplegar(self):
-        print(f'[ ID: {self.id}  |  Valor: {self.valor}]')
-
-    def EsIgualALLave(self, id):
-        return self.id == id
-    
 
 ############################################################

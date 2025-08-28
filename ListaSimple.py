@@ -96,6 +96,7 @@ class ListaSimple:
         actual = self.primero
         indice = 0
         while actual:
+            #Valida si existe el valor id y si si el id es igual
             if hasattr(actual.valor, 'id') and actual.valor.id == id_buscar:
                 return indice
             actual = actual.siguiente
