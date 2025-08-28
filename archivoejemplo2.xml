@@ -27,7 +27,7 @@
         <sensoresCultivo>
             <sensorT id="t01" nombre="Sensor T01">
                 <frecuencia idEstacion="e01">100</frecuencia>
-                <frecuencia idEstacion="e02">200</frecuencia>
+                <frecuencia idEstacion="e02">0</frecuencia>
                 <frecuencia idEstacion="e03">300</frecuencia>
                 <frecuencia idEstacion="e04">400</frecuencia>
                 <frecuencia idEstacion="e05">500</frecuencia>
