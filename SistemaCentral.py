@@ -18,7 +18,7 @@ class Sistema:
         #Leer archivo
         SA = SistemArchivos()
         #Ruta para TESTEOS
-        rutacompleta = "G:\\2020\\2020_USAC\\Semestre14(2025)\\IPC2\\1_Laboratorio\\4_PROYECTO1\\IPC2_Proyecto1_201906795\\archivoejemplo2.xml"
+        rutacompleta = "G:\\2020\\2020_USAC\\Semestre14(2025)\\IPC2\\1_Laboratorio\\4_PROYECTO1\\IPC2_Proyecto1_201906795\\archivoejemplo.xml"
         print(rutacompleta)
         #Recivir lectura
         self.archivo = SA.leerArchivo(rutacompleta)

@@ -101,8 +101,8 @@ class FilaD(InfoNodo):
     def desplegar(self):
         print(f'- Fila>> : {self.fila}  |  Valor: {self.valor}')
 
-    def EsIgualALLave(self, id):
-        return self.fila == id
+    def EsIgualALLave(self, valor):
+        return self.valor == valor
     
     def cambiarvalor(self, valor):
         self.valor = valor
