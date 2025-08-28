@@ -90,22 +90,18 @@ class CampoAgricola(InfoNodo):
             print()
             print(">>>> Matriz Suelo")
             self.matriz_suelo.desplegar()
-            print("casilla [0,0]")
-            self.matriz_suelo.datocasilla(0,0).desplegar()
-            print("casilla [1,2]")
-            self.matriz_suelo.datocasilla(1,2).desplegar()
-            print("casilla [2,3]")
-            self.matriz_suelo.datocasilla(2,3).desplegar()
-            print("casilla [2,4]")
-            self.matriz_suelo.datocasilla(2,4).desplegar()
+            
             print(">>>> Matriz Cultivo")
             self.matriz_cultivo.desplegar()
-            print("casilla [0,0]")
-            self.matriz_cultivo.datocasilla(0,0).desplegar()
-            print("casilla [0,2]")
-            self.matriz_cultivo.datocasilla(0,2).desplegar()
-            print("casilla [0,4]")
-            self.matriz_cultivo.datocasilla(0,4).desplegar()
+            
+
+            # #Obtener datos
+            # print("casilla [0,0]")
+            # self.matriz_suelo.datocasilla(0,0).desplegar()
+            
+            # print("casilla [0,0]")
+            # self.matriz_cultivo.datocasilla(0,0).desplegar()
+          
 
         except Exception as e:
             print("¡¡¡ Error al realizar matrices !!!")
