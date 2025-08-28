@@ -131,6 +131,12 @@ class CampoAgricola(InfoNodo):
             print(">> Matriz Cultivo PATRON")
             self.matriz_cultivo_Patron.desplegar()
 
+            #Obtener datos de las matrices
+            max_columna = self.matriz_cultivo.numero_filas
+            max_fila = self.matriz_cultivo.numero_columnas
+            print(f'Columnas: {max_columna}  Filas: {max_fila}')
+            
+
 
 
         except:
