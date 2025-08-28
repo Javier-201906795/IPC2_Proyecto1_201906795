@@ -10,5 +10,9 @@ class CampoAgricola:
         self.sensores_suelo = ListaSimple()
         self.sensores_cultivo = ListaSimple()
 
+    def desplegar(self):
+        print(f'>>> Campo Agricola>> ID: {self.idC}  |  Nombre: {self.nombre}')
+    
+
 
 

@@ -1,6 +1,7 @@
 
 from ListaSimple import ListaSimple
 from NodosSistema import Estacion, Frecuencia
+from CampoAgricola import CampoAgricola
 
 
 from SistemaArchivos import SistemArchivos
@@ -68,7 +69,10 @@ class Sistema:
                     id = campo.getAttribute('id')
                     #Obtener Nombre
                     nombre = campo.getAttribute('nombre')
-                    print("ID: ", id, " - Nombre: ", nombre)
+                    #Crear Campo
+                    campo_Agricola = CampoAgricola(id,nombre)
+                    campo_Agricola.desplegar()
+
 
             #############################################################################
                     #> Cargar Estaciones Base
