@@ -53,7 +53,8 @@ class Sistema:
 
     def SegmentarDatos(self):
         #imprimir
-
+        for nodo in self.archivo:
+            print(nodo.toprettyxml())
 
         if self.archivo != None:
             print(">>> Procesando datos...")
