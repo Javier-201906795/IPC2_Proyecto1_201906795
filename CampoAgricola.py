@@ -270,8 +270,11 @@ class CampoAgricola(InfoNodo):
             
             #Resumen
             print()
+            self.matriz_suelo_Patron.desplegar()
+            print()
             print('-'*10 + "[Filas Resumen]"+"-"*10)
             ListaFilas.desplegar()
+            print()
 
         except Exception as e:
             print("\n¡¡¡ Ocurrio un error al crear matrices Reducidas !!!")
