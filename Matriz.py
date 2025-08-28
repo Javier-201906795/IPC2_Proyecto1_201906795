@@ -17,10 +17,10 @@ class Matriz:
             #Agregar a columna
             self.matriz.agregar(fila)
     
-    def datocasilla(self, n_fila, n_columna):
-        fila = self.matriz.obtener(n_fila)
+    def datocasilla(self, n_columna, n_fila ):
+        fila = self.matriz.obtener(n_columna)
         if fila:
-            return fila.obtener(n_columna)
+            return fila.obtener(n_fila)
         return None
 
     def desplegar(self):
