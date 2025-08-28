@@ -23,6 +23,16 @@ class CampoAgricola(InfoNodo):
         self.sensores_suelo.desplegar()
         print("°°°"+"-"*10 + " [ Sensores Cultivo ]"+"-"*10)
         self.sensores_cultivo.desplegar()
+        print()
+        print("\\/"*25)
+        print()
+        print(">>>> Matriz Suelo")
+        if self.matriz_suelo != None:
+            self.matriz_suelo.desplegar()
+        
+        print(">>>> Matriz Cultivo")
+        if self.matriz_cultivo != None:
+            self.matriz_cultivo.desplegar()
         print("#"*50)
         print()
     
@@ -106,3 +116,6 @@ class CampoAgricola(InfoNodo):
         except Exception as e:
             print("¡¡¡ Error al realizar matrices !!!")
             print(e)
+    
+
+    

@@ -190,9 +190,11 @@ class Sistema:
                     print("°"*10+" [ Resumen Campo Agricola ] "+"°"*10)
                     campo_Agricola.desplegar()
 
+                    ##########################################
                     #Crear Matrices
                     print(">>> Agrupando en Matrices")
                     campo_Agricola.RealizarMatrices()
+                    ##########################################
 
                     #Alamacenar Campo
                     self.camposcultivo.agregar(campo_Agricola)
