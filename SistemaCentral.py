@@ -52,6 +52,9 @@ class Sistema:
 
 
     def SegmentarDatos(self):
+        #imprimir
+
+
         if self.archivo != None:
             print(">>> Procesando datos...")
             #Recorrer datos
