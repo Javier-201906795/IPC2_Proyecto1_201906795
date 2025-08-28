@@ -76,9 +76,12 @@ class CampoAgricola(InfoNodo):
                     frecuencia_valor.desplegar()
                     #Obtener posicion fila
                     n_fila = self.estaciones_base.buscar_indice(frecuencia_valor.id)
-                    if n_fila != -1:
+                    #Cambiar posicion fila mandar al fondo
+
+                    n_fila_nueva = numero_estaciones - n_fila - 1
+                    if n_fila_nueva != -1:
                         #Guardar en matriz
-                        self.matriz_suelo.asignarValor(n_fila,n_columna,frecuencia_valor)
+                        self.matriz_suelo.asignarValor(n_fila_nueva,n_columna,frecuencia_valor)
                     frecuencia_actual = frecuencia_actual.siguiente
 
             #Asignar Valores matriz Cultivo
@@ -96,7 +99,7 @@ class CampoAgricola(InfoNodo):
                     #Obtener posicion fila
                     n_fila = self.estaciones_base.buscar_indice(frecuencia_valor.id)
                     #Cambiar posicion fila mandar al fondo
-                    n_fila_nueva = frecuencias_lista.tamano() - n_fila - 1
+                    n_fila_nueva = numero_estaciones - n_fila - 1
                     if n_fila_nueva != -1:
                         #Guardar en matriz
                         self.matriz_cultivo.asignarValor(n_fila_nueva,n_columna,frecuencia_valor)
@@ -107,6 +110,14 @@ class CampoAgricola(InfoNodo):
             print()
             print(">>>> Matriz Suelo")
             self.matriz_suelo.desplegar()
+            print("casilla [0,0]")
+            self.matriz_suelo.datocasilla(0,0).desplegar()
+            print("casilla [1,2]")
+            self.matriz_suelo.datocasilla(1,2).desplegar()
+            print("casilla [2,3]")
+            self.matriz_suelo.datocasilla(2,3).desplegar()
+            print("casilla [2,4]")
+            self.matriz_suelo.datocasilla(2,4).desplegar()
             print(">>>> Matriz Cultivo")
             self.matriz_cultivo.desplegar()
             print("casilla [0,0]")
