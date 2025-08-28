@@ -186,6 +186,11 @@ class Sistema:
                         campo_Agricola.sensores_cultivo.desplegar()
                         print("-"*30)
                         print()
+                    
+                    #imprimir Resumen
+                    print("\n \n")
+                    print("°"*10+" [ Resumen Campo Agricola ] "+"°"*10)
+                    campo_Agricola.desplegar()
 
                 except Exception as e:
                     print("¡¡¡ Error al segmentar los datos !!!")
