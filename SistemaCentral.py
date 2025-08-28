@@ -197,3 +197,10 @@ class Sistema:
                     print(e)
         else:
             print("¡¡¡ No hay datos para segmentar !!!")
+
+
+
+    def desplegar(self):
+        print("/"*10+" [ Lista Campos de Cultivo ] " + "/"*10)
+        self.camposcultivo.desplegar()
+            

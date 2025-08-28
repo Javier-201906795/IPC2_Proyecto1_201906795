@@ -32,6 +32,8 @@ while True:
             print(">> Procesar el Archivo.")
             #Segmentar el archivo en categorias (sensores)
             Sys.SegmentarDatos()
+            #Imprimir Campos de Cultivo
+            Sys.desplegar()
 
         elif ingreseopcion == 3:
             print(">> Menu Escribir archivo de salida.")
