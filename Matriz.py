@@ -8,33 +8,36 @@ class Matriz:
         self.matriz = ListaSimple()
 
         #Crear matriz vacia
-        for i in range(self.numero_filas):
+        for i in range(self.numero_columnas):
             fila = ListaSimple()
             #Llenar Fila
-            for h in range(self.numero_columnas):
+            for h in range(self.numero_filas):
                 valor = ValorMatriz("0","0")
                 fila.agregar(valor)
             #Agregar a columna
             self.matriz.agregar(fila)
     
+    def datocasilla(self, n_fila, n_columna):
+        fila = self.matriz.obtener(n_fila)
+        if fila:
+            return fila.obtener(n_columna)
+        return None
+
     def desplegar(self):
         print("-"*10+"[Matriz]"+"-"*10)
 
-        #Imprimir Primera Fila
-        Fila = self.matriz.obtenerprimero()
-        print(Fila)
-        Fila.desplegar()
-        Fila.obtenerDato().desplegar()
+        print("tamaño ", self.matriz.tamano())
+
+        for i in range(self.matriz.tamano()):
+            print("Columna", i,"-"*10)
+            for j in range(self.numero_filas):
+                dato = self.datocasilla(i,j)
+                dato.desplegar()
+
 
         
         
 
-        # #Imprimir Columna
-        # for i in range(self.matriz.tamano()):
-        #     columna = self.matriz
-        #     fila = self.matriz
-        #     print("Columna",i)
-        #     #Imprimir Fila
         
     
     

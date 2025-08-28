@@ -22,6 +22,7 @@ class ListaSimple:
 
     def __init__(self):
         self.primero = None
+        self.longitud = 0
     
     def obtenerprimero(self):
         return self.primero
@@ -33,6 +34,7 @@ class ListaSimple:
         nuevo = Nodo(item)
         nuevo.asignarSiguiente(self.primero)
         self.primero = nuevo
+        self.longitud += 1
 
     def tamano(self):
         actual = self.primero
@@ -80,3 +82,22 @@ class ListaSimple:
                 print("Eliminado2")
             else:
                 print("no encontrado")
+
+    def obtener(self, indice):
+        if indice < 0 or indice >= self.longitud:
+            return None
+        actual = self.primero
+        for i in range(indice):
+            actual = actual.siguiente
+        return actual.valor
+    
+    def buscar_indice(self, id_buscar):
+        # Busca el índice de un elemento por su id
+        actual = self.primero
+        indice = 0
+        while actual:
+            if hasattr(actual.dato, 'id') and actual.dato.id == id_buscar:
+                return indice
+            actual = actual.siguiente
+            indice += 1
+        return -1
