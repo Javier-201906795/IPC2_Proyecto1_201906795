@@ -246,27 +246,33 @@ class CampoAgricola(InfoNodo):
             ListaFilas = ListaSimple()
             FilaValores = ""
             contador = 0
+            indicadorfila = 0
             #Recorrer matriz
-            for i in range(max_colum):
-                for j in range(max_fila):
-                    print(f'[{i},{j}]')
-                    casillactual = self.matriz_suelo_Patron.datocasilla(i,j)
-                    casillactual.desplegar()
-                    valoractual = casillactual.valor
-                    #Almacenar
-                    FilaValores += str(valoractual)+","
+            for h in range(1):
+                for i in range(max_colum):
+                    for j in range(max_fila):
+                        #Obtener solo una fila
+                        if j <= indicadorfila:
+                            print(f'[{i},{j}]')
+                            casillactual = self.matriz_suelo_Patron.datocasilla(i,j)
+                            casillactual.desplegar()
+                            valoractual = casillactual.valor
+                            #Almacenar
+                            FilaValores += str(valoractual)+","
+                            print(FilaValores)
+                        
+                    indicadorfila += 1
+                    #Imprimir valores Fila
+                    print(f">>> Columna: {i} \n>>>> FilaValores:")
                     print(FilaValores)
-                #Imprimir valores Fila
-                print(f">>> Columna: {i} \n>>>> FilaValores:")
-                print(FilaValores)
-                print()
-                #Guardar Fila
-                nuevaFila = FilaD(contador,FilaValores)
-                ListaFilas.agregar(nuevaFila)
-                #Limpiar Fila
-                FilaValores = ""
-                #Contador
-                contador +=1
+                    print()
+                    #Guardar Fila
+                    nuevaFila = FilaD(contador,FilaValores)
+                    ListaFilas.agregar(nuevaFila)
+                    #Limpiar Fila
+                    FilaValores = ""
+                    #Contador
+                    contador +=1
             
             #Resumen
             print()
