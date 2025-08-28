@@ -233,5 +233,21 @@ class CampoAgricola(InfoNodo):
     def CrearMatricesReducidas(self):
         try:
             print("\n>>> Procesando Matrices Reducidas...\n")
+            
+            ###############################################################
+            print("\n>>>> Procesadno Matriz PATRON Sensores")
+            #Obtener Valores Fila
+            max_colum = self.matriz_suelo_Patron.numero_columnas
+            max_fila = self.matriz_suelo_Patron.numero_filas
+            print(f'columnas: {max_colum} y filas: {max_fila}')
+            #Variable Fila
+            Fila = None
+            #Recorrer matriz
+            for i in range(max_colum):
+                for j in range(max_fila):
+                    print(f'[{i},{j}]')
+                    valoractual = self.matriz_suelo_Patron.datocasilla(i,j)
+                    valoractual.desplegar()
+
         except Exception as e:
             print("\n¡¡¡ Ocurrio un error al crear matrices Reducidas !!!")
