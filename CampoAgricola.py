@@ -2,7 +2,7 @@ from NodosSistema import *
 from ListaSimple import ListaSimple 
 
 
-class CampoAgricola:
+class CampoAgricola(InfoNodo):
     def __init__(self, id, nombre):
         self.id = id
         self.nombre = nombre
@@ -23,6 +23,8 @@ class CampoAgricola:
         print("#"*50)
         print()
     
+    def EsIgualALLave(self, id):
+        return self.id == id
     
     
     
