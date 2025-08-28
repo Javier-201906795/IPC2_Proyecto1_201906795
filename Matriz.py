@@ -36,11 +36,11 @@ class Matriz:
 
     def asignarValor(self, num_fila, num_columna, datonuevo):
         # Establece un valor en la posicion [fila, columna]
-        fila = self.matriz.obtener(num_fila)
+        fila = self.matriz.obtener(num_columna)
         if fila:
             # Buscar el nodo en la columna especifica
             columna = fila.primero
-            for i in range(num_columna):
+            for i in range(num_fila):
                 if columna:
                     columna = columna.siguiente
             if columna:

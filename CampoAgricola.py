@@ -41,12 +41,12 @@ class CampoAgricola(InfoNodo):
             self.matriz_suelo = Matriz(numero_estaciones, numero_sensores_suelo)
             self.matriz_cultivo = Matriz(numero_estaciones, numero_sensores_cultivo)
 
-            #Imprimir
-            print(">>>> Matrices Vacias Creadas")
-            print(">>>> Matriz Suelo")
-            self.matriz_suelo.desplegar()
-            print(">>>> Matriz Cultivo")    
-            self.matriz_cultivo.desplegar()
+            # #Imprimir
+            # print(">>>> Matrices Vacias Creadas")
+            # print(">>>> Matriz Suelo")
+            # self.matriz_suelo.desplegar()
+            # print(">>>> Matriz Cultivo")    
+            # self.matriz_cultivo.desplegar()
 
             #Asignar Valores
             # self.matriz_suelo.asignarValor(0,0,ValorMatriz("e1","2251"))
