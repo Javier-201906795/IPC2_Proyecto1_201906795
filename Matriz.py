@@ -24,13 +24,15 @@ class Matriz:
         return None
 
     def desplegar(self):
-        print("-"*10+"[Matriz]"+"-"*10)
+        print("-"*10+"[Incio Matriz]"+"-"*10)
 
         for i in range(self.matriz.tamano()):
             print("Columna", i,"-"*10)
             for j in range(self.numero_filas):
                 dato = self.datocasilla(i,j)
                 dato.desplegar()
+        
+        print("-"*10+"[Fin Matriz]"+"-"*10)
 
     def asignarValor(self, num_fila, num_columna, datonuevo):
         # Establece un valor en la posicion [fila, columna]
