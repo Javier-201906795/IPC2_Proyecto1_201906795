@@ -26,8 +26,6 @@ class Matriz:
     def desplegar(self):
         print("-"*10+"[Matriz]"+"-"*10)
 
-        print("tamaño ", self.matriz.tamano())
-
         for i in range(self.matriz.tamano()):
             print("Columna", i,"-"*10)
             for j in range(self.numero_filas):
