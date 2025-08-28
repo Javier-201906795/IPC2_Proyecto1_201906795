@@ -15,14 +15,14 @@ class InfoNodo():
 
 class Estacion(InfoNodo):
     def __init__(self, id, nombre):
-        self.idE = id
-        self.nombreE = nombre
+        self.id = id
+        self.nombre = nombre
     
     def desplegar(self):
-        print(f'- Estacion>> ID: {self.idE}  |  Nombre: {self.nombreE}')
+        print(f'- Estacion>> ID: {self.id}  |  Nombre: {self.nombre}')
     
     def EsIgualALLave(self, id):
-        return self.idE == id
+        return self.id == id
     
 
 
@@ -31,14 +31,14 @@ class Estacion(InfoNodo):
 
 class Frecuencia(InfoNodo):
     def __init__(self, id, valor):
-        self.idF = id
-        self.valorF = int(valor.strip())
+        self.id = id
+        self.valor = int(valor.strip())
     
     def desplegar(self):
-        print(f'- Frecuencia>> ID: {self.idF}  |  Valor: {self.valorF}')
+        print(f'- Frecuencia>> ID: {self.id}  |  Valor: {self.valor}')
 
     def EsIgualALLave(self, id):
-        return self.idF == id
+        return self.id == id
     
 
 ############################################################

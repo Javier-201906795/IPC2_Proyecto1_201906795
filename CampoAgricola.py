@@ -29,6 +29,14 @@ class CampoAgricola(InfoNodo):
     def RealizarMatrices(self):
         try:
             print(">>> Realizando matrices...")
+            #Tamaño Matriz
+            numero_estaciones = self.estaciones_base.tamano()
+            numero_sensores_suelo = self.sensores_suelo.tamano()
+            numero_sensores_cultivo = self.sensores_cultivo.tamano()
+
+            #Crear Matrices
+            
+
         except Exception as e:
             print("¡¡¡ Error al realizar matrices !!!")
             print(e)
