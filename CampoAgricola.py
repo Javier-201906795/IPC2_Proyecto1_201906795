@@ -4,7 +4,7 @@ from ListaSimple import ListaSimple
 
 class CampoAgricola:
     def __init__(self, id, nombre):
-        self.idC = id
+        self.id = id
         self.nombre = nombre
         self.estaciones_base = ListaSimple()
         self.sensores_suelo = ListaSimple()
@@ -13,7 +13,7 @@ class CampoAgricola:
     def desplegar(self):
         print()
         print("#"*50)
-        print(f'>>> Campo Agricola>> ID: {self.idC}  |  Nombre: {self.nombre}')
+        print(f'>>> Campo Agricola>> ID: {self.id}  |  Nombre: {self.nombre}')
         print("°"+"-"*10 + " [ Estaciones Base ]"+"-"*10)
         self.estaciones_base.desplegar()
         print("°°"+"-"*10 + " [ Sensores Suelo ]"+"-"*10)
