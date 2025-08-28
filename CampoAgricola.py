@@ -151,6 +151,7 @@ class CampoAgricola(InfoNodo):
             self.matriz_cultivo_Patron.desplegar()
 
             #Obtener datos de las matrices
+            #################################################
             #>Cultivo
             max_columna = self.matriz_cultivo.numero_columnas
             max_fila = self.matriz_cultivo.numero_filas
@@ -167,7 +168,7 @@ class CampoAgricola(InfoNodo):
                         valornumero = int(valor)
                         #convertir
                         if valornumero != 0:
-                            print("cambiar")
+                            print("cambiar -> 1")
                             datonuevo = Frecuencia(casilla.id,"1")
                             #Rempalzar
                             self.matriz_cultivo_Patron.asignarValor(j,i,datonuevo)
@@ -177,8 +178,8 @@ class CampoAgricola(InfoNodo):
                             self.matriz_cultivo_Patron.asignarValor(j,i,datonuevo)
                     except:
                         print(f"¡¡¡ No se pudo convertir en valor la casilla [{i},{j}] !!!")
-                    print(valornumero)
-            
+                    
+            print("-"*10+"[ Matriz Patron Cultivo ]"+"-"*10)
             self.matriz_cultivo_Patron.desplegar()
             
             
