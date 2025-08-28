@@ -113,8 +113,8 @@ class CampoAgricola(InfoNodo):
             self.matriz_cultivo.datocasilla(0,0).desplegar()
             print("casilla [0,2]")
             self.matriz_cultivo.datocasilla(0,2).desplegar()
-            print("casilla [0,5]")
-            self.matriz_cultivo.datocasilla(0,5).desplegar()
+            print("casilla [0,4]")
+            self.matriz_cultivo.datocasilla(0,4).desplegar()
 
         except Exception as e:
             print("¡¡¡ Error al realizar matrices !!!")
