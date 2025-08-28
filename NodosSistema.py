@@ -40,6 +40,9 @@ class Frecuencia(InfoNodo):
     def EsIgualALLave(self, id):
         return self.id == id
     
+    def cambiarvalor(self, valor):
+        self.valor = valor
+    
 
 ############################################################
 

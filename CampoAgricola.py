@@ -122,6 +122,25 @@ class CampoAgricola(InfoNodo):
             print(e)
     
 
+    def desplegarMatrices(self):
+        #Imprimir
+        print()
+        print(">>>> Matriz Suelo")
+        self.matriz_suelo.desplegar()
+        
+        print(">>>> Matriz Cultivo")
+        self.matriz_cultivo.desplegar()
+
+        #Imprimir
+        print()
+        print(">>>> Matriz Suelo PATRON")
+        self.matriz_suelo_Patron.desplegar()
+        
+        print(">>>> Matriz Cultivo PATRON")
+        self.matriz_cultivo_Patron.desplegar()
+
+    
+    
     def CrearMatricesPatron(self):
         try:
             print(">>>> tomando datos.")
@@ -141,15 +160,26 @@ class CampoAgricola(InfoNodo):
                     print(f'[{i},{j}]')
                     self.matriz_cultivo.datocasilla(i,j).desplegar()
                     #Obtener Valor casilla
-                    valor = self.matriz_cultivo.datocasilla(i,j).valor
+                    casilla = self.matriz_cultivo.datocasilla(i,j)
+                    valor = casilla.valor
                     #Convertir a numero
                     try:
                         valornumero = int(valor)
+                        #convertir
+                        if valornumero != 0:
+                            print("cambiar")
+                            datonuevo = Frecuencia(casilla.id,"1")
+                            #Rempalzar
+                            self.matriz_cultivo_Patron.asignarValor(j,i,datonuevo)
+                        else:
+                            datonuevo = Frecuencia(casilla.id,"0")
+                            #Rempalzar
+                            self.matriz_cultivo_Patron.asignarValor(j,i,datonuevo)
                     except:
                         print(f"¡¡¡ No se pudo convertir en valor la casilla [{i},{j}] !!!")
                     print(valornumero)
             
-            
+            self.matriz_cultivo_Patron.desplegar()
             
             
 
