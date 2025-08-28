@@ -191,6 +191,8 @@ class Sistema:
                     print("\n \n")
                     print("°"*10+" [ Resumen Campo Agricola ] "+"°"*10)
                     campo_Agricola.desplegar()
+                    #Alamacenar Campo
+                    self.camposcultivo.agregar(campo_Agricola)
 
                 except Exception as e:
                     print("¡¡¡ Error al segmentar los datos !!!")
