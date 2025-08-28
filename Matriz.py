@@ -12,7 +12,7 @@ class Matriz:
             fila = ListaSimple()
             #Llenar Fila
             for h in range(self.numero_filas):
-                valor = ValorMatriz("0","0")
+                valor = Frecuencia("0","0")
                 fila.agregar(valor)
             #Agregar a columna
             self.matriz.agregar(fila)

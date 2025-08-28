@@ -49,32 +49,42 @@ class CampoAgricola(InfoNodo):
             self.matriz_cultivo.desplegar()
 
             #Asignar Valores
-            self.matriz_suelo.asignarValor(0,0,ValorMatriz("e1","2251"))
-            self.matriz_suelo.asignarValor(1,1,ValorMatriz("e2","1500"))
-            self.matriz_suelo.asignarValor(1,4,ValorMatriz("e3","800"))
+            # self.matriz_suelo.asignarValor(0,0,ValorMatriz("e1","2251"))
+            # self.matriz_suelo.asignarValor(1,1,ValorMatriz("e2","1500"))
+            # self.matriz_suelo.asignarValor(1,4,ValorMatriz("e3","800"))
 
-            #Imprimir
-            print()
-            print(">>>> Matrices")
-            print(">>>> Matriz Suelo")
-            self.matriz_suelo.desplegar()
-            print(">>>> Matriz Cultivo")    
-            self.matriz_cultivo.desplegar()
+            # #Imprimir
+            # print()
+            # print(">>>> Matrices")
+            # print(">>>> Matriz Suelo")
+            # self.matriz_suelo.desplegar()
+            # print(">>>> Matriz Cultivo")    
+            # self.matriz_cultivo.desplegar()
 
 
             #Asignar Valores matriz Suelo
             for n_columna in range(numero_sensores_suelo):
                 #Obtener sensor
                 sensorsuelo = self.sensores_suelo.obtener(n_columna)
-                #Obtener frecuencias
-                frecuencias_lista = sensorsuelo.lecturas.obtenerprimero()
-                while frecuencias_lista:
-                    frecuencia_actual = frecuencias_lista.valor
-                    frecuencia_actual.desplegar()
-                    break
+                #Obtener Lista frecuencias
+                frecuencias_lista = sensorsuelo.lecturas
+                #Obtener primera frecuencia
+                frecuencia_actual = frecuencias_lista.obtenerprimero()
+                while frecuencia_actual:
+                    #Obtener valor frecuencia
+                    frecuencia_valor = frecuencia_actual.valor
+                    frecuencia_valor.desplegar()
+                    #Obtener posicion fila
+                    n_fila = self.estaciones_base.buscar_indice(frecuencia_valor.id)
+                    if n_fila != -1:
+                        self.matriz_suelo.asignarValor(n_fila,n_columna,frecuencia_valor)
+                    frecuencia_actual = frecuencia_actual.siguiente
 
                 
-
+            #Imprimir
+            print()
+            print(">>>> Matriz Suelo")
+            self.matriz_suelo.desplegar()
 
         except Exception as e:
             print("¡¡¡ Error al realizar matrices !!!")
