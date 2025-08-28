@@ -196,6 +196,12 @@ class Sistema:
                     campo_Agricola.RealizarMatrices()
                     ##########################################
 
+                    ##########################################
+                    #Crear Marices PATRON
+                    print("\n>>> Creando matrices Patron")
+                    campo_Agricola.CrearMatricesPatron()
+                    ##########################################
+
                     #Alamacenar Campo
                     self.camposcultivo.agregar(campo_Agricola)
 

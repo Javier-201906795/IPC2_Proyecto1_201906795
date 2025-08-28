@@ -118,4 +118,8 @@ class CampoAgricola(InfoNodo):
             print(e)
     
 
-    
+    def CrearMatricesPatron(self):
+        try:
+            print(">>>> tomando datos.")
+        except:
+            print("¡¡¡ Ocurrio un error al formar Matrices Patron !!!")
