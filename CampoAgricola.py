@@ -334,6 +334,17 @@ class CampoAgricola(InfoNodo):
 
             #Imprimir
             matrizReducida.desplegar()
+            print("\n\n")
+
+
+            #Llenar Matriz
+            print(">Llenando Matrices Reducidas")
+            #Obtner filas que se repiten
+            casilla = ListaFilasRepetidas.obtenerprimero()
+            fila1 = casilla.valor.obtenerfila1()
+            fila2 = casilla.valor.obtenerfila2()
+            print(f'Fila{fila1} = Fila{fila2}')
+            
 
             
 

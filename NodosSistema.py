@@ -121,6 +121,15 @@ class FilasRepetidas(InfoNodo):
         self.fila1 = fila1
         self.fila2 = fila2
 
+    def obtenervalor(self):
+        return self.valor
+
+    def obtenerfila1(self):
+        return self.fila1
+    
+    def obtenerfila2(self):
+        return self.fila2
+
     def EsIgualALLave(self, valor):
         return self.valor == valor
     
