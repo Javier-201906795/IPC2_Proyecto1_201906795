@@ -457,6 +457,7 @@ class CampoAgricola(InfoNodo):
             print("----------- Añadir a Matriz Reducido valores no sumados --------")
             for i in range(self.matrizReducida.numero_columnas):
                 for j in range(ListaAuxiliar.tamano()):
+                    print("\n>Valores matriz suelo")
                     obtenernumerofila = ListaAuxiliar.obtenerprimero().valor.obtenervalor()
                     print(f'[{i},{obtenernumerofila}]')
                     #Obtener valor
@@ -469,12 +470,31 @@ class CampoAgricola(InfoNodo):
                     idcasilla = self.matriz_suelo.datocasilla(i,(obtenernumerofila+1)).obtenerid()
                     casilla_nueva = Frecuencia(idcasilla,int(valorcasilla))
                     self.matrizReducida.asignarValor(obtenernumerofila,i,casilla_nueva)
+                    #######################################
+                    obtenernumerofila = obtenernumerofila + 1
+                    print("\n>Valores matriz cultivo")
+                    print(f'[{0},{obtenernumerofila}]')
+                    #Obtener valor
+                    valorcasilla = self.matriz_cultivo.datocasilla(0,obtenernumerofila).valor
+                    print(valorcasilla)
+                    #Almacenar valor
+                    try:
+                        obtenernumerofila = int(obtenernumerofila) - 1
+                        print(f"numerofila: {obtenernumerofila}")
+                        idcasilla = self.matriz_cultivo.datocasilla(i,(obtenernumerofila+1)).obtenerid()
+                        casilla_nueva = Frecuencia(idcasilla,int(valorcasilla))
+                        self.matrizReducida_Cultivo.asignarValor(obtenernumerofila,i,casilla_nueva)
+                    except:
+                        print("valor ya guardado.")
+                    print("-"*30)
+
                     
                     
-            print("----[ Matriz Reducida ]----")
+            print("\n----[ Matriz Reducida SUELO ]----")
             self.matrizReducida.desplegar()
-            #print("----[ Matriz Suelo ]----")
-            #self.matriz_suelo.desplegar()
+            print("\n\n----[ Matriz Reducida CULTIVO ]----")
+            self.matrizReducida_Cultivo.desplegar()
+           
 
 
         except Exception as e:
