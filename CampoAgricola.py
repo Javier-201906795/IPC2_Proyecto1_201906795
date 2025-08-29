@@ -14,6 +14,7 @@ class CampoAgricola(InfoNodo):
         self.matriz_cultivo = None
         self.matriz_suelo_Patron = None
         self.matriz_cultivo_Patron = None
+        self.matrizReducida = None
 
     def desplegar(self):
         print()
@@ -330,10 +331,10 @@ class CampoAgricola(InfoNodo):
             print(f"filas totales: {self.matriz_suelo_Patron.numero_filas} - {ListaFilasRepetidas.tamano()} = {num_filas}")
 
             #Crear Matriz
-            matrizReducida = Matriz(num_filas,num_columnas)
+            self.matrizReducida = Matriz(num_filas,num_columnas)
 
             #Imprimir
-            matrizReducida.desplegar()
+            self.matrizReducida.desplegar()
             print("\n\n")
 
             # #Imprimir matriz sensores
@@ -369,9 +370,12 @@ class CampoAgricola(InfoNodo):
                         dato_1 = int(fila1_casillamatriz_valor)
                         dato_2 = int(fila2_casillamatriz_valor)
                         suma = dato_1 + dato_2
-                        print(suma)
                     except:
                         print("Error al convertir a nuemro valores")
+                    print("suma = ",suma)
+                    #Guardar Valor en Matriz Reducida
+                    
+
                 print("---------------")
 
             
