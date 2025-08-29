@@ -268,21 +268,31 @@ class CampoAgricola(InfoNodo):
 
             print("\n>> Resumen ListaFilas\n")  
             ListaFilas.desplegar()
+            print("\n>> Fin Resumen ListaFilas\n")  
 
             
-            
-            # #Obtener Primer dato
-            # dato = ListaFilas.obtenerprimero()
-            # datovalor = dato.valor
-            # datovalor.desplegar()
-            # #Obtener siguiente dato
-            # dato2 = dato
-            # for i in range(max_tamano):
-            #     #siguiente
-            #     dato2 = dato2.siguiente
-            #     dato2valor = dato2.valor
-            #     dato2valor.desplegar()
-            #     #Comparar
+            print(">> Comparando Valores")
+            max_tamano = ListaFilas.tamano() - 1
+            #Obtener Primer dato
+            dato = ListaFilas.obtenerprimero()
+            #CICLO 1
+            dato.valor.desplegar()
+            datovalor = dato.valor.obtenervalor()
+            print(datovalor)
+            #Obtener siguiente dato
+            dato2 = dato
+            for i in range(max_tamano):
+                #siguiente
+                dato2 = dato2.siguiente
+                dato2.valor.desplegar()
+                dato2valor = dato2.valor.obtenervalor()
+                print(dato2valor)
+                print(f'Comparara {datovalor} es =  a {dato2valor}')
+                #Comparar
+                # if datovalor == dato2valor:
+                #     print(f"Se encontraron dos patrones iguales")
+                #     print(f'Fila -> {dato.valor.id} = Fila -> {dato2.valor.id}')
+
                 
 
 

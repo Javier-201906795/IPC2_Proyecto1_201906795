@@ -107,3 +107,5 @@ class FilaD(InfoNodo):
     def cambiarvalor(self, valor):
         self.valor = valor
     
+    def obtenervalor(self):
+        return self.valor
