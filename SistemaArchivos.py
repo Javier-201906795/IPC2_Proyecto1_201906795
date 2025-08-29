@@ -96,34 +96,43 @@ class SistemArchivos:
                     # ==============================
                     # Sensores de Suelo
                     # ==============================
+                    Lista_sensores_suelo = nodocampo_valor.sensores_suelo
                     sensores_suelo = doc.createElement("sensoresSuelo")
                     campo.appendChild(sensores_suelo)
 
-                    # Sensor S01
-                    sensorS1 = doc.createElement("sensorS")
-                    sensorS1.setAttribute("id", "s01")
-                    sensorS1.setAttribute("nombre", "Sensor S01")
+                    sensor = Lista_sensores_suelo.obtenerprimero()
+                    
 
-                    f1 = doc.createElement("frecuencia")
-                    f1.setAttribute("idEstacion", "e01")
-                    f1.appendChild(doc.createTextNode("700"))
-                    sensorS1.appendChild(f1)
+                    for i in range(Lista_sensores_suelo.tamano()):
+                        if i >=1:
+                            sensor = sensor.siguiente
+                        sensor_valor = sensor.valor
+                        # Sensor S01
+                        sensorS1 = doc.createElement("sensorS")
+                        sensorS1.setAttribute("id", sensor_valor.id)
+                        sensorS1.setAttribute("nombre", sensor_valor.nombre)
+                        #Frecuencias
+                        Lista_frecuencias = sensor_valor.lecturas
+                        datof = Lista_frecuencias.obtenerprimero()
+                        for j in range(Lista_frecuencias.tamano()):
+                            if j >= 1:
+                                datof.siguiente
+                            datof_valor = datof.valor
+                            f1 = doc.createElement("frecuencia")
+                            f1.setAttribute("idEstacion", datof_valor.id)
+                            f1.appendChild(doc.createTextNode(str(datof_valor.valor)))
+                            sensorS1.appendChild(f1)
 
-                    f2 = doc.createElement("frecuencia")
-                    f2.setAttribute("idEstacion", "e04")
-                    f2.appendChild(doc.createTextNode("1500"))
-                    sensorS1.appendChild(f2)
-
-                    sensores_suelo.appendChild(sensorS1)
+                        sensores_suelo.appendChild(sensorS1)
 
                     # Sensor S02
                     sensorS2 = doc.createElement("sensorS")
-                    sensorS2.setAttribute("id", "s02")
-                    sensorS2.setAttribute("nombre", "Sensor S02")
+                    sensorS2.setAttribute("id", "s002")
+                    sensorS2.setAttribute("nombre", "Sensor S002")
 
                     f3 = doc.createElement("frecuencia")
-                    f3.setAttribute("idEstacion", "e01")
-                    f3.appendChild(doc.createTextNode("8300"))
+                    f3.setAttribute("idEstacion", "e001")
+                    f3.appendChild(doc.createTextNode("83000"))
                     sensorS2.appendChild(f3)
 
                     sensores_suelo.appendChild(sensorS2)
