@@ -52,9 +52,14 @@ class CampoAgricola(InfoNodo):
         print()
         print("\\/"*25)
         print()
-        print(">>>> Matriz Suelo REDUCIDA")
+        print(">>>> Matriz Suelo REDUCIDA SUELO")
         if self.matrizReducida != None:
             self.matrizReducida.desplegar()
+
+        print()
+        print(">>>> Matriz Suelo REDUCIDA CULTIVO")
+        if self.matrizReducida_Cultivo != None:
+            self.matrizReducida_Cultivo.desplegar()
         
 
         print("#"*50)
