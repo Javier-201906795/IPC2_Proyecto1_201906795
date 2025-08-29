@@ -234,9 +234,10 @@ class CampoAgricola(InfoNodo):
         try:
             print("\n>>> Procesando Matrices Reducidas...\n")
             
-            ###############################################################
+            
             print("\n>>>> Procesadno Matriz PATRON Sensores")
             
+            #Inicio_#################### [ BUSCAR FILAS REPETIDAS ] #########################
             #-----------------------------
             #>Obtener Valores Fila
             max_colum = self.matriz_suelo_Patron.numero_columnas
@@ -271,7 +272,8 @@ class CampoAgricola(InfoNodo):
             ListaFilas.desplegar()
             print("\n>> Fin Resumen ListaFilas\n")  
 
-            
+            #-----------------------------
+            ListaFilasRepetidas = ListaSimple()
             print(">> Comparando Valores")
             max_tamano = ListaFilas.tamano() - 1
             #Primer dato a comparar
@@ -304,11 +306,22 @@ class CampoAgricola(InfoNodo):
                             print(f">>>>> Se encontraron dos patrones iguales")
                             print(f'>>>>> Fila {dato.valor.obtenerfila()} = Fila {dato2.valor.obtenerfila()}')
                             #Guardar valores
+                            filaReptida = FilasRepetidas(datovalor,dato2.valor.obtenerfila(),dato.valor.obtenerfila())
+                            ListaFilasRepetidas.agregar(filaReptida)
                     else:
                         break
                 
                 contador += 1
 
+            #Imprimir
+            print("\n"+"-"*10+"[ Lista Filas Repetidas ]" + "-"*10)
+            ListaFilasRepetidas.desplegar()
+            print()
+            #-----------------------------
+            #Fin_#################### [ FIN buscar filas repetidas ] #########################
+
+
+            
 
 
         except Exception as e:
