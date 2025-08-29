@@ -386,7 +386,7 @@ class CampoAgricola(InfoNodo):
                     except:
                         print("Error al convertir a nuemro valores")
                     print("suma = ",suma)
-                    print("\n>Remplazar valores matriz reducida")
+                    print("\n>Remplazar valores matriz reducida Sensores")
 
                     #Guardar Valor en Matriz Reducida
                     dato = self.matrizReducida.datocasilla(j,fila1)
@@ -396,15 +396,28 @@ class CampoAgricola(InfoNodo):
                     dato.desplegar()
 
                     #######################################
+                    print("\n>Valores matriz cultivo")
                     #Matriz Cultivo
-                    fila1_C = self.matrizReducida_Cultivo.datocasilla(j,fila1)
-                    fila2_C = self.matrizReducida_Cultivo.datocasilla(j,fila2)
+                    fila1_C = self.matriz_cultivo.datocasilla(0,fila1)
+                    D_fila1_C = fila1_C.valor
+                    fila2_C = self.matriz_cultivo.datocasilla(0,fila2)
+                    D_fila2_C = fila2_C.valor
+                    sumar = int(D_fila1_C) + int(D_fila2_C)
+                    print(f"sumar {D_fila1_C} + {D_fila2_C} =  {sumar}")
+                    #Guardar Valor en Matriz Reducida
+                    dato = self.matrizReducida_Cultivo.datocasilla(0,fila1)
+                    dato.desplegar()
+                    dato.cambiarvalor(sumar)
+                    dato.cambiarid(str(fila1_C.id)+","+str(fila1_C.id))
+                    dato.desplegar()
 
                 print("\n"+"°"*30)
 
             #Imprimir matriz Reducida
-            print("-----------------[Matriz Reducida]---------------")
+            print("-----------------[Matriz Reducida Sensores]---------------")
             self.matrizReducida.desplegar()
+            print("-----------------[Matriz Reducida Cultivo]---------------")
+            self.matrizReducida_Cultivo.desplegar()
 
             #Asignar valores matrz que no se sumaron
             print("\n"+"°"*30)
@@ -456,6 +469,7 @@ class CampoAgricola(InfoNodo):
                     idcasilla = self.matriz_suelo.datocasilla(i,(obtenernumerofila+1)).obtenerid()
                     casilla_nueva = Frecuencia(idcasilla,int(valorcasilla))
                     self.matrizReducida.asignarValor(obtenernumerofila,i,casilla_nueva)
+                    
                     
             print("----[ Matriz Reducida ]----")
             self.matrizReducida.desplegar()
