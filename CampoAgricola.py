@@ -366,6 +366,7 @@ class CampoAgricola(InfoNodo):
                 #Obtener valores filas
                 print(f'---[ Fila{fila1} ]---')
                 for j in range(self.matriz_suelo.numero_columnas):
+
                     #Fila1
                     fila1_casillamatriz = self.matriz_suelo.datocasilla(j,fila1)
                     fila1_casillamatriz_valor = fila1_casillamatriz.valor
@@ -388,6 +389,7 @@ class CampoAgricola(InfoNodo):
                     dato = self.matrizReducida.datocasilla(j,fila1)
                     dato.desplegar()
                     dato.cambiarvalor(suma)
+                    dato.cambiarid(str(fila1_casillamatriz.id)+","+str(fila2_casillamatriz.id))
                     dato.desplegar()
 
                 print("\n"+"°"*30)
