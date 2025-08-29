@@ -293,6 +293,7 @@ class CampoAgricola(InfoNodo):
                 if datovalor == dato2valor:
                     print(f">>>>> Se encontraron dos patrones iguales")
                     print(f'Fila -> {dato.valor.obtenerfila()} = Fila -> {dato2.valor.obtenerfila()}')
+                    #Guardar valores
 
                 
 
