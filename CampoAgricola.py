@@ -373,15 +373,20 @@ class CampoAgricola(InfoNodo):
                     except:
                         print("Error al convertir a nuemro valores")
                     print("suma = ",suma)
-                    print("\n\n")
+                    print("\n>Remplazar valores matriz reducida")
+
                     #Guardar Valor en Matriz Reducida
-                    dato = self.matrizReducida.datocasilla(0,0)
+                    dato = self.matrizReducida.datocasilla(j,fila1)
+                    dato.desplegar()
+                    dato.cambiarvalor(suma)
                     dato.desplegar()
                     
 
-                print("---------------")
+                print("\n"+"°"*30)
 
-            
+            #Imprimir matriz Reducida
+            print("-----------------[Matriz Reducida]---------------")
+            self.matrizReducida.desplegar()
 
 
         except Exception as e:
