@@ -336,10 +336,10 @@ class CampoAgricola(InfoNodo):
             matrizReducida.desplegar()
             print("\n\n")
 
-            #Imprimir matriz sensores
-            print("\n\n")
-            self.matriz_suelo.desplegar()
-            print("\n\n")
+            # #Imprimir matriz sensores
+            # print("\n\n")
+            # self.matriz_suelo.desplegar()
+            # print("\n\n")
 
             #Llenar Matriz
             print(">Llenando Matrices Reducidas")
@@ -353,15 +353,26 @@ class CampoAgricola(InfoNodo):
                 fila1 = casilla.valor.obtenerfila1()
                 fila2 = casilla.valor.obtenerfila2()
                 print(f'Fila{fila1} = Fila{fila2}')
-                #Sumar Filas
-                #Dejar de Fijo fila1
+                #Obtener valores filas
                 print(f'---[ Fila{fila1} ]---')
                 for j in range(self.matriz_suelo.numero_columnas):
+                    #Fila1
                     fila1_casillamatriz = self.matriz_suelo.datocasilla(j,fila1)
                     fila1_casillamatriz_valor = fila1_casillamatriz.valor
-                    print(f'[{j},{fila1}] -> {fila1_casillamatriz_valor}')
-                
-            
+                    print(f'F{fila1}-> [{j},{fila1}] -> {fila1_casillamatriz_valor}')
+                    #Fila2
+                    fila2_casillamatriz = self.matriz_suelo.datocasilla(j,fila2)
+                    fila2_casillamatriz_valor = fila2_casillamatriz.valor
+                    print(f'F{fila2}-> [{j},{fila2}] -> {fila2_casillamatriz_valor}')
+                    #Sumar
+                    try:
+                        dato_1 = int(fila1_casillamatriz_valor)
+                        dato_2 = int(fila2_casillamatriz_valor)
+                        suma = dato_1 + dato_2
+                        print(suma)
+                    except:
+                        print("Error al convertir a nuemro valores")
+                print("---------------")
 
             
 
