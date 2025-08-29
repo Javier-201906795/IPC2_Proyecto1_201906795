@@ -269,46 +269,7 @@ class CampoAgricola(InfoNodo):
             print("\n>> Resumen ListaFilas\n")  
             ListaFilas.desplegar()
 
-            # for h in range(1):
-            #     for i in range(max_colum):
-            #         for j in range(max_fila):
-            #             #Obtener solo una fila
-            #             if j <= indicadorfila:
-            #                 print(f'[{i},{j}]')
-            #                 casillactual = self.matriz_suelo_Patron.datocasilla(i,j)
-            #                 casillactual.desplegar()
-            #                 valoractual = casillactual.valor
-            #                 #Almacenar
-            #                 FilaValores += str(valoractual)+","
-            #                 print(FilaValores)
-                        
-            #         indicadorfila += 1
-            #         #Imprimir valores Fila
-            #         print(f">>> Columna: {i} \n>>>> FilaValores:")
-            #         print(FilaValores)
-            #         print()
-            #         #Guardar Fila
-            #         nuevaFila = FilaD(contador,FilaValores)
-            #         ListaFilas.agregar(nuevaFila)
-            #         #Limpiar Fila
-            #         FilaValores = ""
-            #         #Contador
-            #         contador +=1
             
-            # #Resumen
-            # print()
-            # self.matriz_suelo_Patron.desplegar()
-            # print()
-            # print('-'*10 + "[Filas Resumen]"+"-"*10)
-            # ListaFilas.desplegar()
-            # print()
-
-            # #>FIN Obtener Valores Fila
-            # #-----------------------------
-
-            # #Comparar Filas buscando iguales
-            # max_tamano = ListaFilas.tamano() - 1
-            # print(f"\n tamañoLista: {max_tamano}")
             
             # #Obtener Primer dato
             # dato = ListaFilas.obtenerprimero()
