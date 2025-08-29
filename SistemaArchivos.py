@@ -32,9 +32,9 @@ class SistemArchivos:
 
                 nodocampo = Lista_campos.obtenerprimero()
                 
-                
+                numerocampos = Lista_campos.tamano()
 
-                for i in range(Lista_campos.tamano()):
+                for i in range(numerocampos):
                     #Obtener siguiente
                     if i >= 1 :
                         nodocampo = nodocampo.siguiente
@@ -56,13 +56,15 @@ class SistemArchivos:
                     # campo.appendChild(estaciones)
 
                     # #Recorrer matriz
+                    # print(f"Matriz tamaño columnas: {matrizSueloReducida.numero_columnas} , filas: {matrizSueloReducida.numero_filas}")
                     # for i in range(matrizSueloReducida.numero_columnas):
                     #     for j in range(matrizSueloReducida.numero_filas):
-                    #         matriz_casilla = matrizSueloReducida.datocasilla(i,j)
-                    #         estacion1 = doc.createElement("estacion")
-                    #         estacion1.setAttribute("id", matriz_casilla.id)
-                    #         estacion1.setAttribute("nombre", matriz_casilla.valor)
-                    #         estaciones.appendChild(estacion1)
+                    #         print(f"[{i},{j}]")
+                    #         # matriz_casilla = matrizSueloReducida.datocasilla(i,j)
+                    #         # estacion1 = doc.createElement("estacion")
+                    #         # estacion1.setAttribute("id", matriz_casilla.id)
+                    #         # estacion1.setAttribute("nombre", matriz_casilla.valor)
+                    #         # estaciones.appendChild(estacion1)
 
 
                     # ==============================
