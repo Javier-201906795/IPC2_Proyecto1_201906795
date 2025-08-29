@@ -12,6 +12,11 @@
    <estacion id="0,0" valor="0"/>
    <estacion id="e04" valor="1500"/>
   </estacionesSueloReducidas>
+  <estacionesCultivoReducidas>
+   <estacion id="e01,e01" valor="4500"/>
+   <estacion id="e02,e02" valor="5200"/>
+   <estacion id="e04" valor="950"/>
+  </estacionesCultivoReducidas>
   <sensoresSuelo>
    <sensorS id="s01" nombre="Sensor S01">
     <frecuencia idEstacion="e01">700</frecuencia>

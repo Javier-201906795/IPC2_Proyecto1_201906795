@@ -70,6 +70,27 @@ class SistemArchivos:
                                 estaciones.appendChild(estacion1)
                             else:
                                 print(f"Casilla vacía o inválida en [{i},{j}]")
+                    
+                    # ==============================
+                    # Estaciones Base Reducidas CULTIVO
+                    # ==============================
+                    matrizCultivoReducida = nodocampo_valor.matrizReducida_Cultivo
+                    estaciones = doc.createElement("estacionesCultivoReducidas")
+                    campo.appendChild(estaciones)
+
+                    #Recorrer matriz
+                    print(f"Matriz tamaño columnas: {matrizCultivoReducida.numero_columnas} , filas: {matrizCultivoReducida.numero_filas}")
+                    for i in range(matrizCultivoReducida.numero_columnas):
+                        for j in range(matrizCultivoReducida.numero_filas):
+                            print(f"[{i},{j}]")
+                            matriz_casilla = matrizCultivoReducida.datocasilla(i,j)
+                            if matriz_casilla and hasattr(matriz_casilla, 'id') and hasattr(matriz_casilla, 'valor'):
+                                estacion1 = doc.createElement("estacion")
+                                estacion1.setAttribute("id", str(matriz_casilla.id))
+                                estacion1.setAttribute("valor", str(matriz_casilla.valor))
+                                estaciones.appendChild(estacion1)
+                            else:
+                                print(f"Casilla vacía o inválida en [{i},{j}]")
 
 
                     # ==============================
