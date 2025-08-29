@@ -47,7 +47,10 @@ class SistemArchivos:
 
                 # Convertir XML a string
                 xml_str = doc.toprettyxml(indent=" ", encoding="UTF-8")
-
+            except:
+                print("¡¡¡ Ocurrio un error al segmentar el archivo!!!")
+            
+            try:
                 # Guardar en la ruta especificada
                 with open(self.rutadelarchivo, "wb") as f:
                     f.write(xml_str)
