@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <camposAgricolas>
  <campo id="01" nombre="Campo agrícola 01">
-  <estacionesBaseReducidas>
-   <estacion id="e01" nombre="Estacion 01, Estacion 03"/>
-   <estacion id="e02" nombre="Estacion 02, Estacion 05"/>
-   <estacion id="e04" nombre="Estacion 04"/>
-  </estacionesBaseReducidas>
   <sensoresSuelo>
    <sensorS id="s01" nombre="Sensor S01">
     <frecuencia idEstacion="e01">700</frecuencia>
