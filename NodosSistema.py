@@ -46,6 +46,8 @@ class Frecuencia(InfoNodo):
     def cambiarid(self, id):
         self.id = id
     
+    def obtenerid(self):
+        return self.id
 
 ############################################################
 
