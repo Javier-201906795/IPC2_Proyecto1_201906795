@@ -278,7 +278,7 @@ class CampoAgricola(InfoNodo):
             dato = ListaFilas.obtenerprimero()
             contador = 0
             #CICLO 1
-            max_ciclo = ListaFilas.tamano() - 2
+            max_ciclo = ListaFilas.tamano() - 1
             print(f'tamaño lista y ciclos = {max_ciclo}')
             for i in range(max_ciclo):
                 print("-> contador: ", contador)
@@ -289,22 +289,23 @@ class CampoAgricola(InfoNodo):
                         break
                 # dato.valor.desplegar()
                 datovalor = dato.valor.obtenervalor()
-                print(datovalor)
+                # print(datovalor)
                 #Obtener siguiente dato
                 dato2 = dato
                 for i in range(max_tamano):
                     #siguiente
                     dato2 = dato2.siguiente
-                    if dato2 == None:
+                    if dato2 != None:
+                        # dato2.valor.desplegar()
+                        dato2valor = dato2.valor.obtenervalor()
+                        print(f'Comparara {datovalor} es =  a {dato2valor}')
+                        #Comparar
+                        if datovalor == dato2valor:
+                            print(f">>>>> Se encontraron dos patrones iguales")
+                            print(f'>>>>> Fila {dato.valor.obtenerfila()} = Fila {dato2.valor.obtenerfila()}')
+                            #Guardar valores
+                    else:
                         break
-                    # dato2.valor.desplegar()
-                    dato2valor = dato2.valor.obtenervalor()
-                    print(f'Comparara {datovalor} es =  a {dato2valor}')
-                    #Comparar
-                    if datovalor == dato2valor:
-                        print(f">>>>> Se encontraron dos patrones iguales")
-                        print(f'>>>>> Fila {dato.valor.obtenerfila()} = Fila {dato2.valor.obtenerfila()}')
-                        #Guardar valores
                 
                 contador += 1
 
