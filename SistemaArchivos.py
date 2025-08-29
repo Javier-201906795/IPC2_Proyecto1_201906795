@@ -125,34 +125,6 @@ class SistemArchivos:
 
                         sensores_suelo.appendChild(sensorS1)
 
-                    # Sensor S02
-                    sensorS2 = doc.createElement("sensorS")
-                    sensorS2.setAttribute("id", "s002")
-                    sensorS2.setAttribute("nombre", "Sensor S002")
-
-                    f3 = doc.createElement("frecuencia")
-                    f3.setAttribute("idEstacion", "e001")
-                    f3.appendChild(doc.createTextNode("83000"))
-                    sensorS2.appendChild(f3)
-
-                    sensores_suelo.appendChild(sensorS2)
-
-                    # Sensor S03
-                    sensorS3 = doc.createElement("sensorS")
-                    sensorS3.setAttribute("id", "s03")
-                    sensorS3.setAttribute("nombre", "Sensor S03")
-
-                    f4 = doc.createElement("frecuencia")
-                    f4.setAttribute("idEstacion", "e02")
-                    f4.appendChild(doc.createTextNode("8000"))
-                    sensorS3.appendChild(f4)
-
-                    f5 = doc.createElement("frecuencia")
-                    f5.setAttribute("idEstacion", "e04")
-                    f5.appendChild(doc.createTextNode("1500"))
-                    sensorS3.appendChild(f5)
-
-                    sensores_suelo.appendChild(sensorS3)
 
                     # ==============================
                     # Sensores de Cultivo
