@@ -380,13 +380,57 @@ class CampoAgricola(InfoNodo):
                     dato.desplegar()
                     dato.cambiarvalor(suma)
                     dato.desplegar()
-                    
 
                 print("\n"+"°"*30)
 
             #Imprimir matriz Reducida
             print("-----------------[Matriz Reducida]---------------")
             self.matrizReducida.desplegar()
+
+            #Asignar valores matrz que no se sumaron
+            print("\n"+"°"*30)
+
+            print("--------------[ Lista Auxiliar para Deducir cual no se sumo ] -------------")
+            ListaAuxiliar = ListaSimple()
+            #Llenar lista auxiliar
+            for i in range(self.matriz_suelo.numero_filas):
+                Dato = UnDato(i)
+                ListaAuxiliar.agregar(Dato)
+            ListaAuxiliar.desplegar()
+            print("\n\n")
+            
+            casilla = ListaFilasRepetidas.obtenerprimero()
+            for i in range(ListaFilasRepetidas.tamano()):
+                print(f'i={i}')
+                #Pasar al siguiente
+                if i >= 1:
+                    casilla = casilla.siguiente
+                #Obtener filas
+                fila1 = casilla.valor.obtenerfila1()
+                fila2 = casilla.valor.obtenerfila2()
+                print(f'Fila{fila1} = Fila{fila2}')
+                #Buscar en Lista Auxiliar
+                if ListaAuxiliar.buscar(fila1) == True:
+                    #Eliminar de la Lista
+                    ListaAuxiliar.eliminar(fila1)
+                if ListaAuxiliar.buscar(fila2) == True:
+                    #Eliminar de la Lista
+                    ListaAuxiliar.eliminar(fila2)
+
+            print("\n"+"°"*30)
+
+            print("--- Lista Auxiliar ---")
+            ListaAuxiliar.desplegar()
+
+            print("----------- Añadir a Matriz Reducido valores no sumados --------")
+            for i in range(self.matrizReducida.numero_columnas):
+                for j in range(ListaAuxiliar.tamano()):
+                    obtenernumerofila = ListaAuxiliar.obtenerprimero().valor.obtenervalor()
+                    print(f'[{i},{obtenernumerofila}]')
+                    #Obtener valor
+                    valorcasilla = self.matriz_suelo.datocasilla(i,obtenernumerofila).valor
+                    print(valorcasilla)
+                    
 
 
         except Exception as e:

@@ -135,3 +135,19 @@ class FilasRepetidas(InfoNodo):
     
     def desplegar(self):
         print(f'> Valor: {self.valor} -> Fila{self.fila1} = Fila{self.fila2}')
+
+
+############################################################
+
+class UnDato(InfoNodo):
+    def __init__(self,valor):
+        self.valor = valor
+    
+    def desplegar(self):
+        print(f'> Valor: {self.valor}')
+    
+    def EsIgualALLave(self, valor):
+        return self.valor == valor
+
+    def obtenervalor(self):
+        return self.valor
