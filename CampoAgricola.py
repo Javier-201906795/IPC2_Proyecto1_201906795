@@ -373,7 +373,10 @@ class CampoAgricola(InfoNodo):
                     except:
                         print("Error al convertir a nuemro valores")
                     print("suma = ",suma)
+                    print("\n\n")
                     #Guardar Valor en Matriz Reducida
+                    dato = self.matrizReducida.datocasilla(0,0)
+                    dato.desplegar()
                     
 
                 print("---------------")
