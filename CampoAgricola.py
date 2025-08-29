@@ -430,7 +430,14 @@ class CampoAgricola(InfoNodo):
                     #Obtener valor
                     valorcasilla = self.matriz_suelo.datocasilla(i,obtenernumerofila).valor
                     print(valorcasilla)
+                    #Almacenar valor
+                    obtenernumerofila = int(obtenernumerofila) - 1
+                    print(f"numerofila: {obtenernumerofila}")
+                    idcasilla = self.matriz_suelo.datocasilla(i,obtenernumerofila).id
+                    casilla_nueva = Frecuencia(idcasilla,int(valorcasilla))
+                    self.matrizReducida.asignarValor(obtenernumerofila,i,casilla_nueva)
                     
+            self.matrizReducida.desplegar()
 
 
         except Exception as e:

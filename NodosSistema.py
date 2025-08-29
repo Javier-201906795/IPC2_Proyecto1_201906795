@@ -32,7 +32,7 @@ class Estacion(InfoNodo):
 class Frecuencia(InfoNodo):
     def __init__(self, id, valor):
         self.id = id
-        self.valor = int(valor.strip())
+        self.valor = int(str(valor).strip())
     
     def desplegar(self):
         print(f'- Frecuencia>> ID: {self.id}  |  Valor: {self.valor}')
