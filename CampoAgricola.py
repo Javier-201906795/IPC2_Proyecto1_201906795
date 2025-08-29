@@ -251,13 +251,23 @@ class CampoAgricola(InfoNodo):
             for h in range(max_fila):
                 for i in range(max_colum):
                     for j in range(max_fila):
-                        print(f'[{i},{j}]')
+                        # print(f'[{i},{j}]')
                         #Obtener primero
                         if j == indicadorfila:
                             print(f"----> [{i},{j}]")
-                    print("--")
+                            valoractual = self.matriz_suelo_Patron.datocasilla(i,j).valor
+                            print(valoractual)
+                            FilaValores += str(valoractual)+","
                 indicadorfila +=1
-                print("$$$$$$")
+                #Almacenar Fila
+                print(f'Filavalores = {FilaValores}')
+                nuevaFila = FilaD(indicadorfila,FilaValores)
+                ListaFilas.agregar(nuevaFila)
+                #Reiniciar Fila
+                FilaValores = ""
+
+            print("\n>> Resumen ListaFilas\n")  
+            ListaFilas.desplegar()
 
             # for h in range(1):
             #     for i in range(max_colum):
