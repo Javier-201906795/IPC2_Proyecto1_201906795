@@ -258,13 +258,14 @@ class CampoAgricola(InfoNodo):
                             valoractual = self.matriz_suelo_Patron.datocasilla(i,j).valor
                             print(valoractual)
                             FilaValores += str(valoractual)+","
-                indicadorfila +=1
+                
                 #Almacenar Fila
                 print(f'Filavalores = {FilaValores}')
                 nuevaFila = FilaD(indicadorfila,FilaValores)
                 ListaFilas.agregar(nuevaFila)
                 #Reiniciar Fila
                 FilaValores = ""
+                indicadorfila +=1
 
             print("\n>> Resumen ListaFilas\n")  
             ListaFilas.desplegar()
@@ -289,9 +290,9 @@ class CampoAgricola(InfoNodo):
                 print(dato2valor)
                 print(f'Comparara {datovalor} es =  a {dato2valor}')
                 #Comparar
-                # if datovalor == dato2valor:
-                #     print(f"Se encontraron dos patrones iguales")
-                #     print(f'Fila -> {dato.valor.id} = Fila -> {dato2.valor.id}')
+                if datovalor == dato2valor:
+                    print(f">>>>> Se encontraron dos patrones iguales")
+                    print(f'Fila -> {dato.valor.obtenerfila()} = Fila -> {dato2.valor.obtenerfila()}')
 
                 
 

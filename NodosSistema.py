@@ -109,3 +109,6 @@ class FilaD(InfoNodo):
     
     def obtenervalor(self):
         return self.valor
+    
+    def obtenerfila(self):
+        return self.fila
