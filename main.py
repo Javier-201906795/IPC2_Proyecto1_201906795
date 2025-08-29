@@ -1,6 +1,7 @@
 
 from Menutexto import Menu
 from SistemaCentral import Sistema
+from SistemaArchivos import SistemArchivos
 
 #> [Clase Texto Menus]
 txt = Menu()
@@ -41,6 +42,15 @@ while True:
             print(">> Menu Escribir archivo de salida.")
             ruta, nombre = txt.EscribirSalida()
             print(ruta, " - ",nombre)
+            ruta_junta = ruta + "\\"+ nombre
+            #Obtener Lista campos de cultivo
+            print(">>> Obtener campos de cultivo")
+            campos_cultivo = Sys.obtenercamposcultivo()
+            #Guardar Archivo
+            print(">>>> Procesar informacion para guardar.")
+            Archivo = SistemArchivos()
+            Archivo.asignarrutaarchivo(ruta_junta)
+            Archivo.guardarArchivo(campos_cultivo)
 
         elif ingreseopcion == 4:
             print(">> Menu Mostrar datos del estudiante")

@@ -10,6 +10,9 @@ class Sistema:
     def __init__(self):
         self.archivo = None
         self.camposcultivo = ListaSimple()
+    
+    def obtenercamposcultivo(self):
+        return self.camposcultivo
         
 
     def CargarArchivos(self, rutacompleta):
