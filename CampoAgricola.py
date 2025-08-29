@@ -15,6 +15,7 @@ class CampoAgricola(InfoNodo):
         self.matriz_suelo_Patron = None
         self.matriz_cultivo_Patron = None
         self.matrizReducida = None
+        self.matrizReducida_Cultivo = None
 
     def desplegar(self):
         print()
@@ -342,6 +343,8 @@ class CampoAgricola(InfoNodo):
             #Crear Matriz
             self.matrizReducida = Matriz(num_filas,num_columnas)
 
+            self.matrizReducida_Cultivo = Matriz(num_filas,self.matriz_cultivo.numero_columnas)
+
             #Imprimir
             self.matrizReducida.desplegar()
             print("\n\n")
@@ -391,6 +394,11 @@ class CampoAgricola(InfoNodo):
                     dato.cambiarvalor(suma)
                     dato.cambiarid(str(fila1_casillamatriz.id)+","+str(fila2_casillamatriz.id))
                     dato.desplegar()
+
+                    #######################################
+                    #Matriz Cultivo
+                    fila1_C = self.matrizReducida_Cultivo.datocasilla(j,fila1)
+                    fila2_C = self.matrizReducida_Cultivo.datocasilla(j,fila2)
 
                 print("\n"+"°"*30)
 
