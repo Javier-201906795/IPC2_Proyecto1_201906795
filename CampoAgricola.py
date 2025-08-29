@@ -319,7 +319,21 @@ class CampoAgricola(InfoNodo):
             print()
             #-----------------------------
             #Fin_#################### [ FIN buscar filas repetidas ] #########################
+            
+            
+            
+            #Inicio_#################### [ CREAR MATRIZ REDUCIDA ] #########################
+            print("\n >Creando Matriz Reducida")
+            num_columnas = self.matriz_suelo_Patron.numero_columnas
+            #por cada fila repetida es 1 fila menos
+            num_filas = self.matriz_suelo_Patron.numero_filas - ListaFilasRepetidas.tamano()
+            print(f"filas totales: {self.matriz_suelo_Patron.numero_filas} - {ListaFilasRepetidas.tamano()} = {num_filas}")
 
+            #Crear Matriz
+            matrizReducida = Matriz(num_filas,num_columnas)
+
+            #Imprimir
+            matrizReducida.desplegar()
 
             
 
