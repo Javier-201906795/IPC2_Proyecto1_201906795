@@ -336,14 +336,31 @@ class CampoAgricola(InfoNodo):
             matrizReducida.desplegar()
             print("\n\n")
 
+            #Imprimir matriz sensores
+            print("\n\n")
+            self.matriz_suelo.desplegar()
+            print("\n\n")
 
             #Llenar Matriz
             print(">Llenando Matrices Reducidas")
             #Obtner filas que se repiten
             casilla = ListaFilasRepetidas.obtenerprimero()
-            fila1 = casilla.valor.obtenerfila1()
-            fila2 = casilla.valor.obtenerfila2()
-            print(f'Fila{fila1} = Fila{fila2}')
+            for i in range(ListaFilasRepetidas.tamano()):
+                #Pasar al siguiente
+                if i >= 1:
+                    casilla = casilla.siguiente
+                #Obtener filas
+                fila1 = casilla.valor.obtenerfila1()
+                fila2 = casilla.valor.obtenerfila2()
+                print(f'Fila{fila1} = Fila{fila2}')
+                #Sumar Filas
+                #Dejar de Fijo fila1
+                print(f'---[ Fila{fila1} ]---')
+                for j in range(self.matriz_suelo.numero_columnas):
+                    fila1_casillamatriz = self.matriz_suelo.datocasilla(j,fila1)
+                    fila1_casillamatriz_valor = fila1_casillamatriz.valor
+                    print(f'[{j},{fila1}] -> {fila1_casillamatriz_valor}')
+                
             
 
             
