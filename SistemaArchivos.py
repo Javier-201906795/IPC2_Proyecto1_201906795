@@ -38,6 +38,8 @@ class SistemArchivos:
                     #Obtener siguiente
                     if i >= 1 :
                         nodocampo = nodocampo.siguiente
+                        if nodocampo == None:
+                            break
                     # Crear un campo
                     print(">Creando campo",i)
                     nodocampo_valor = nodocampo.valor
@@ -49,22 +51,25 @@ class SistemArchivos:
                     
 
                     # ==============================
-                    # Estaciones Base Reducidas
+                    # Estaciones Base Reducidas SUELO
                     # ==============================
-                    # matrizSueloReducida = nodocampo_valor.matrizReducida
-                    # estaciones = doc.createElement("estacionesSueloReducidas")
-                    # campo.appendChild(estaciones)
+                    matrizSueloReducida = nodocampo_valor.matrizReducida
+                    estaciones = doc.createElement("estacionesSueloReducidas")
+                    campo.appendChild(estaciones)
 
-                    # #Recorrer matriz
-                    # print(f"Matriz tamaño columnas: {matrizSueloReducida.numero_columnas} , filas: {matrizSueloReducida.numero_filas}")
-                    # for i in range(matrizSueloReducida.numero_columnas):
-                    #     for j in range(matrizSueloReducida.numero_filas):
-                    #         print(f"[{i},{j}]")
-                    #         # matriz_casilla = matrizSueloReducida.datocasilla(i,j)
-                    #         # estacion1 = doc.createElement("estacion")
-                    #         # estacion1.setAttribute("id", matriz_casilla.id)
-                    #         # estacion1.setAttribute("nombre", matriz_casilla.valor)
-                    #         # estaciones.appendChild(estacion1)
+                    #Recorrer matriz
+                    print(f"Matriz tamaño columnas: {matrizSueloReducida.numero_columnas} , filas: {matrizSueloReducida.numero_filas}")
+                    for i in range(matrizSueloReducida.numero_columnas):
+                        for j in range(matrizSueloReducida.numero_filas):
+                            print(f"[{i},{j}]")
+                            matriz_casilla = matrizSueloReducida.datocasilla(i,j)
+                            if matriz_casilla and hasattr(matriz_casilla, 'id') and hasattr(matriz_casilla, 'valor'):
+                                estacion1 = doc.createElement("estacion")
+                                estacion1.setAttribute("id", str(matriz_casilla.id))
+                                estacion1.setAttribute("valor", str(matriz_casilla.valor))
+                                estaciones.appendChild(estacion1)
+                            else:
+                                print(f"Casilla vacía o inválida en [{i},{j}]")
 
 
                     # ==============================
