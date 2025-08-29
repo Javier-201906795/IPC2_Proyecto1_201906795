@@ -33,7 +33,7 @@ while True:
             #Segmentar el archivo en categorias (sensores)
             Sys.SegmentarDatos()
             #Imprimir Campos de Cultivo
-            #Sys.desplegar()
+            Sys.desplegar()
             #Optimizar
 
 

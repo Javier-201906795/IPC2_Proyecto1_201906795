@@ -47,6 +47,15 @@ class CampoAgricola(InfoNodo):
         print(">>>> Matriz Cultivo PATRON")
         if self.matriz_cultivo_Patron != None:
             self.matriz_cultivo_Patron.desplegar()
+        
+        print()
+        print("\\/"*25)
+        print()
+        print(">>>> Matriz Suelo REDUCIDA")
+        if self.matrizReducida != None:
+            self.matrizReducida.desplegar()
+        
+
         print("#"*50)
         print()
     
