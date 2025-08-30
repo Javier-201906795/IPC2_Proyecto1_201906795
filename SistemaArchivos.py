@@ -157,10 +157,8 @@ class SistemArchivos:
                                 sensorT1.appendChild(f6)
                             sensores_cultivo.appendChild(sensorT1)
                     
-                    # f8 = doc.createElement("frecuencia")
-                    # f8.setAttribute("idEstacion", "e04")
-                    # f8.appendChild(doc.createTextNode("950"))
-                    # sensorT1.appendChild(f8)
+                    
+             
 
                     
 
