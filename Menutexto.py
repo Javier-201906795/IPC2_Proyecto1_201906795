@@ -25,8 +25,9 @@ class Menu():
         print("> Introduccion a la Programación y Computación 2")
         print("> Sección: C")
         print("> 4to. Semestre")
-        print("> Documentacion: ")
         print("> Github: https://github.com/Javier-201906795/IPC2_Proyecto1_201906795 ")
+        print("> Documentacion: ")
+        print("> https://github.com/Javier-201906795/IPC2_Proyecto1_201906795/blob/main/DOCUMENTACION_IPC2_Proyecto1_20190695.docx")
         print("/"*36)
     
     
