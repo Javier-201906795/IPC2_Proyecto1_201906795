@@ -104,25 +104,24 @@ class SistemArchivos:
                     
 
                     for i in range(Lista_sensores_suelo.tamano()):
-                        if i >=1:
+                        if i >= 1:
                             sensor = sensor.siguiente
                         sensor_valor = sensor.valor
                         # Sensor S01
                         sensorS1 = doc.createElement("sensorS")
                         sensorS1.setAttribute("id", sensor_valor.id)
                         sensorS1.setAttribute("nombre", sensor_valor.nombre)
-                        #Frecuencias
+                        # Frecuencias
                         Lista_frecuencias = sensor_valor.lecturas
                         datof = Lista_frecuencias.obtenerprimero()
                         for j in range(Lista_frecuencias.tamano()):
                             if j >= 1:
-                                datof.siguiente
+                                datof = datof.siguiente
                             datof_valor = datof.valor
                             f1 = doc.createElement("frecuencia")
                             f1.setAttribute("idEstacion", datof_valor.id)
                             f1.appendChild(doc.createTextNode(str(datof_valor.valor)))
                             sensorS1.appendChild(f1)
-
                         sensores_suelo.appendChild(sensorS1)
 
 
