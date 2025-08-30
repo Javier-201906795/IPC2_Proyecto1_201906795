@@ -6,6 +6,8 @@ from CampoAgricola import CampoAgricola
 
 from SistemaArchivos import SistemArchivos
 
+import os
+
 class Sistema:
     def __init__(self):
         self.archivo = None
@@ -227,4 +229,43 @@ class Sistema:
         print("/"*10+" [ Lista Campos de Cultivo ] " + "/"*10)
         self.camposcultivo.desplegar()
 
-    
+    def creargrafica(self):
+        print(">>Creando grafica...")
+
+        dot_text = """
+        digraph G {
+            node [shape=plaintext]
+
+            // Matriz 1 con título
+            M1 [
+                label=<
+                <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+                    <TR><TD><B>Matriz 1</B></TD></TR>
+                    <TR>
+                        <TD>
+                            <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                                <TR><TD></TD><TD>s1</TD><TD>s2</TD><TD>s3</TD></TR>
+                                <TR><TD>n1</TD><TD>200</TD><TD>300</TD><TD>0</TD></TR>
+                                <TR><TD>n2</TD><TD>0</TD><TD>0</TD><TD>6000</TD></TR>
+                                <TR><TD>n3</TD><TD>500</TD><TD>8000</TD><TD>0</TD></TR>
+                                <TR><TD>n4</TD><TD>1500</TD><TD>0</TD><TD>1500</TD></TR>
+                                <TR><TD>n5</TD><TD>0</TD><TD>0</TD><TD>2000</TD></TR>
+                            </TABLE>
+                        </TD>
+                    </TR>
+                </TABLE>
+                >
+            ];
+
+            // Organización
+            { rank=same; M1 }  // M1 y M2 en la misma fila
+        }
+        """
+
+        # Guardar el archivo .dot
+        with open("1_Grafica.dot", "w", encoding="utf-8") as f:
+            f.write(dot_text)
+
+        print(">> Archivo 1_Grafica.dot generado")
+
+        #Crear Imagen

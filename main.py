@@ -58,6 +58,7 @@ while True:
 
         elif ingreseopcion == 5:
             print(">> Generar grafica")
+            Sys.creargrafica()
 
         elif ingreseopcion == 6:
             print(">> Saliendo del programa...")
