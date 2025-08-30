@@ -269,3 +269,8 @@ class Sistema:
         print(">> Archivo 1_Grafica.dot generado")
 
         #Crear Imagen
+        try:
+            os.system("dot -Tpng 1_Grafica.dot -o 1_Grafica.png")
+            print(">>Imagen 1_Grafica.png generada")
+        except:
+            print("Error al crear imagen")
