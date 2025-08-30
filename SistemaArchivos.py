@@ -155,14 +155,14 @@ class SistemArchivos:
                                 f6.setAttribute("idEstacion", datof_valor.id)
                                 f6.appendChild(doc.createTextNode(str(datof_valor.valor)))
                                 sensorT1.appendChild(f6)
-
+                            sensores_cultivo.appendChild(sensorT1)
                     
                     # f8 = doc.createElement("frecuencia")
                     # f8.setAttribute("idEstacion", "e04")
                     # f8.appendChild(doc.createTextNode("950"))
                     # sensorT1.appendChild(f8)
 
-                    sensores_cultivo.appendChild(sensorT1)
+                    
 
                     
 
