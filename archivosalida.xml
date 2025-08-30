@@ -35,9 +35,11 @@
   </sensoresSuelo>
   <sensoresCultivo>
    <sensorT id="t01" nombre="Sensor T01">
-    <frecuencia idEstacion="e01">4500</frecuencia>
-    <frecuencia idEstacion="e02">5200</frecuencia>
-    <frecuencia idEstacion="e04">950</frecuencia>
+    <frecuencia idEstacion="e05">3200</frecuencia>
+    <frecuencia idEstacion="e05">3200</frecuencia>
+    <frecuencia idEstacion="e05">3200</frecuencia>
+    <frecuencia idEstacion="e05">3200</frecuencia>
+    <frecuencia idEstacion="e05">3200</frecuencia>
    </sensorT>
   </sensoresCultivo>
  </campo>
