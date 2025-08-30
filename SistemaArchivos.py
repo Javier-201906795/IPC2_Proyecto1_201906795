@@ -135,28 +135,27 @@ class SistemArchivos:
 
                     sensor = Lista_sensores_suelo.obtenerprimero()
 
+                    
                     for i in range(Lista_sensores_suelo.tamano()):
-                        if i >=1:
+                        if i >= 1:
                             sensor = sensor.siguiente
                         sensor_valor = sensor.valor
-                        for j in range(Lista_sensores_suelo.tamano()):
-                            # Sensor T01
-                            sensorT1 = doc.createElement("sensorT")
-                            sensorT1.setAttribute("id", sensor_valor.id)
-                            sensorT1.setAttribute("nombre", sensor_valor.nombre)
-                            #Frecuencias
-                            Lista_frecuencias = sensor_valor.lecturas
-                            datof = Lista_frecuencias.obtenerprimero()
-                            for j in range(Lista_frecuencias.tamano()):
-                                if j >= 1:
-                                    datof.siguiente
-                                datof_valor = datof.valor
-                                f6 = doc.createElement("frecuencia")
-                                f6.setAttribute("idEstacion", datof_valor.id)
-                                f6.appendChild(doc.createTextNode(str(datof_valor.valor)))
-                                sensorT1.appendChild(f6)
-                            sensores_cultivo.appendChild(sensorT1)
-                    
+                        # Sensor T01
+                        sensorT1 = doc.createElement("sensorT")
+                        sensorT1.setAttribute("id", sensor_valor.id)
+                        sensorT1.setAttribute("nombre", sensor_valor.nombre)
+                        # Frecuencias
+                        Lista_frecuencias = sensor_valor.lecturas
+                        datof = Lista_frecuencias.obtenerprimero()
+                        for j in range(Lista_frecuencias.tamano()):
+                            if j >= 1:
+                                datof = datof.siguiente
+                            datof_valor = datof.valor
+                            f6 = doc.createElement("frecuencia")
+                            f6.setAttribute("idEstacion", datof_valor.id)
+                            f6.appendChild(doc.createTextNode(str(datof_valor.valor)))
+                            sensorT1.appendChild(f6)
+                        sensores_cultivo.appendChild(sensorT1)
                     
              
 
