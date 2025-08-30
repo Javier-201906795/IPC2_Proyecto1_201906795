@@ -20,7 +20,7 @@ class SistemArchivos:
          print(">> ruta: ", self.rutadelarchivo)
 
     def guardarArchivo(self,Lista_campos):
-        self.rutadelarchivo = "G:\\2020\\2020_USAC\\Semestre14(2025)\\IPC2\\1_Laboratorio\\4_PROYECTO1\\IPC2_Proyecto1_201906795\\archivosalida.xml"
+        #self.rutadelarchivo = "G:\\2020\\2020_USAC\\Semestre14(2025)\\IPC2\\1_Laboratorio\\4_PROYECTO1\\IPC2_Proyecto1_201906795\\archivosalida.xml"
         try:
             print(">>>> Leyendo archivo.")
             print(self.rutadelarchivo," -> ",Lista_campos)
