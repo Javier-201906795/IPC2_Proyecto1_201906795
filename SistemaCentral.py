@@ -232,24 +232,84 @@ class Sistema:
     def creargrafica(self):
         print(">>Creando grafica...")
 
-        dot_text = """
+        dot_text = ""
+
+        inicio = """
         digraph G {
             node [shape=plaintext]
 
-            // Matriz 1 con título
+            
+        """
+
+
+
+        # enmedio = """
+        # // Matriz 1 con título
+        #     M1 [
+        #         label=<
+        #         <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+        #             <TR><TD><B>Matriz 1</B></TD></TR>
+        #             <TR>
+        #                 <TD>
+        #                     <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+        #                         <TR><TD></TD><TD>s1</TD><TD>s2</TD><TD>s3</TD></TR>
+        #                         <TR><TD>n1</TD><TD>200</TD><TD>300</TD><TD>0</TD></TR>
+        #                         <TR><TD>n2</TD><TD>0</TD><TD>0</TD><TD>6000</TD></TR>
+        #                         <TR><TD>n3</TD><TD>500</TD><TD>8000</TD><TD>0</TD></TR>
+        #                         <TR><TD>n4</TD><TD>1500</TD><TD>0</TD><TD>1500</TD></TR>
+        #                         <TR><TD>n5</TD><TD>0</TD><TD>0</TD><TD>2000</TD></TR>
+        #                     </TABLE>
+        #                 </TD>
+        #             </TR>
+        #         </TABLE>
+        #         >
+        #     ];
+
+        #     // Organización
+        #     { rank=same; M1 }  // M1 y M2 en la misma fila
+        # """
+
+       
+        
+        enmedio = """
             M1 [
                 label=<
                 <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
-                    <TR><TD><B>Matriz 1</B></TD></TR>
+                    <TR><TD><B>Matriz Reducida Sensores Suelo</B></TD></TR>
                     <TR>
                         <TD>
                             <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0">
+                                
+        """
+
+         #Obtener campo
+        try:
+            campoA = self.camposcultivo.obtenerprimero()
+            campoA_valor = campoA.valor
+            #Matriz Reducida Suelo
+            matrizR = campoA_valor.matrizReducida
+            matrizR.desplegar()
+
+            for i in range(matrizR.numero_columnas):
+                for j in range(matrizR.numero_filas):
+                    print(j,i)
+                    casilla = matrizR.datocasilla(i,j)
+                    casilla_id = casilla.id
+                    casilla_valor = casilla.valor
+                    
+        except:
+            print("problema con los datos")
+        
+        enmedio += """
                                 <TR><TD></TD><TD>s1</TD><TD>s2</TD><TD>s3</TD></TR>
                                 <TR><TD>n1</TD><TD>200</TD><TD>300</TD><TD>0</TD></TR>
                                 <TR><TD>n2</TD><TD>0</TD><TD>0</TD><TD>6000</TD></TR>
                                 <TR><TD>n3</TD><TD>500</TD><TD>8000</TD><TD>0</TD></TR>
                                 <TR><TD>n4</TD><TD>1500</TD><TD>0</TD><TD>1500</TD></TR>
                                 <TR><TD>n5</TD><TD>0</TD><TD>0</TD><TD>2000</TD></TR>
+        """
+
+        enmedio += """
                             </TABLE>
                         </TD>
                     </TR>
@@ -259,8 +319,11 @@ class Sistema:
 
             // Organización
             { rank=same; M1 }  // M1 y M2 en la misma fila
-        }
         """
+
+        fin = "}"
+
+        dot_text = inicio + enmedio +fin
 
         # Guardar el archivo .dot
         with open("1_Grafica.dot", "w", encoding="utf-8") as f:
